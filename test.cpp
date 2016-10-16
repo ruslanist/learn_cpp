@@ -2,7 +2,8 @@
 class Home {
 public:
 	Home() {
-		std::cout << "Home" << std::endl;
+		std::cout << "Home 2222" << std::endl;
+
 	}
 };
 
