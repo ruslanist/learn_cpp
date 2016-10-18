@@ -7,7 +7,6 @@
 #include <cstdlib>
 using std::cout;
 using std::endl;
-using namespace std;
 
 /* 
 * Создание Класса GrandBook
@@ -21,6 +20,9 @@ public:
     cout << "Добро пожаловать GitHub!" << endl;
     }
     
+    void displayMessage2() {
+    cout << "Добро пожаловать GitHub2!" << endl;
+    }
         
 }; // Конец Класса GitHub
 
