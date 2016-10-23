@@ -26,22 +26,22 @@ http://logic.pdmi.ras.ru/~smal/aptu/cpp10/2010_11_26.html
 
 #include<string>
 #include<iostream>
-#include<vector> // Подключение для использования Вектора абстрактная модель 
-using std::string;  // динамических масивов
+#include<vector>
+using std::string;
 
 class Item {
 public:
-	Item(const string& name) { // Создает пустую строку
+	Item(const string& name) {
 		_name = name;
 	}
 	string GetName() const {
 		return _name;
 	}
-	virtual string PrintDescription() const {  // Виртуальный метод string
-		return "";                         // константный
+	virtual string PrintDescription() const {
+		return "";
 	}
 private:
-	string _name; // Пустая строка string
+	string _name;
 };
 
 class Bicycle : public Item {
@@ -61,19 +61,15 @@ public:
 };
 
 int main() {
-	std::vector<Item*> item; // Объявление пустого вектора типа Item
+	std::vector<Item*> item;
 	Bicycle b1("b1");
 	Bicycle b2("b2");
-        Bicycle b3("b3");
 	Skates s1("s1");
-        Skates s2("s2");
 	
 	item.push_back(&b1);
 	item.push_back(&b2);
-        item.push_back(&b3);
 	item.push_back(&s1);
-        item.push_back(&s2);
-	for(int i = 0; i < item.size(); i++) { // Цикл lkz выводf значения b и s
+	for(int i = 0; i < item.size(); i++) {
 		std::cout << item[i]->PrintDescription() << std::endl;
 	}
 }
