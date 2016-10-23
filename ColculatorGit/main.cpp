@@ -20,13 +20,13 @@ using namespace std;
  * Класс который отвечает за вывод информации еденицах измерениях.
  */
 
-class Information
-{
-public:
     
-    void inf_izmereniya()
-    {
-        cout << "Меню предаставляющее Информацию о ед. Измерения.\n";
+int main(int argc, char** argv) {
+    
+    
+    int num_menu;
+    
+      cout << "Меню предаставляющее Информацию о ед. Измерения.\n";
         
         cout << "1) Литры - Это.\n";
         cout << "2) Милилитры - Это.\n";
@@ -38,15 +38,6 @@ public:
         cout << "8) Метр квадратный - Это.\n";
         cout << "9) Часы - Это.\n";
         cout << "10) Минуты - Это.\n";
-    }
-};
-
-int main(int argc, char** argv) {
-    
-    
-    int num_menu;
-    
-    Information.inf_izmereniya();
     
     cout << "Меню - Калькулятор велечин изчисления см., кг., м., мин., др.: \n";
     
@@ -58,6 +49,9 @@ int main(int argc, char** argv) {
     cout << "№6. Расчет Площади в метрах квадратных\n";
     cout << "№7. Расчет Часы в Минуты\n";
     
+    
+    for(; true ;)
+    {
     cout << "Введите пожалуйста номер интересующего Вас № пункта от (1 - 7):";
     cin >> num_menu;
     
@@ -132,7 +126,10 @@ int main(int argc, char** argv) {
             
             default:
                 cout << "Вы должны ввести число от 1 до 6.endl";
+        }
+    
     }
+    
     
     
 
