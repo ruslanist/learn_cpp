@@ -55,8 +55,13 @@ int main(int argc, char** argv) {
     cout << "Enter you wondering file" << endl;
     cin >> file_name;
     
-    bool find_file(dir_path, file_name, path_found);
-    
+    if ( find_file(dir_path, file_name, path_found) )
+        {
+        cout << "YES" << endl;
+        } else
+            {
+            cout << "NO" << endl;
+            }
 
     return 0;
 }
