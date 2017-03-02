@@ -32,10 +32,11 @@ void print_dir(const std::string dir)
                   ++itr )
             {
                 cout << itr->path() << endl; 
+                cout << fs::file_size(itr->path() ) << endl;
             }
     }
 
-void file_size(int argc, char* argv[] ) 
+int file_size(int argc, char* argv[] ) 
 
         {
             if ( argc != 2 )
@@ -45,7 +46,7 @@ void file_size(int argc, char* argv[] )
   }
 
   std::cout << "sizeof(intmax_t) is " << sizeof(boost::intmax_t) << '\n';
-
+// intmax_t позволяет работать с переменной не известного размера 
   fs::path p( argv[1] );
 
   if ( !fs::exists( p ) )
@@ -54,7 +55,7 @@ void file_size(int argc, char* argv[] )
     return 1;
   }
 
-  if ( !fs::is_regular( p ) )
+  if ( !fs::is_regular( p ) ) /***********************************/
   {
     std::cout << "not a regular file: " << argv[1] << std::endl;
     return 1;
@@ -89,11 +90,12 @@ bool find_file( const path & dir_path,         // in this directory,
             }
             return false;
 
-int main(int argc, char** argv) {
-    
-     print_dir(argv[1]);
 }
 
+int main (int argc, char* argv[]) {
+ 
+     print_dir(argv[1]);
+     
+     
     return 0;
 }
-
