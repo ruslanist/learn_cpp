@@ -27,13 +27,27 @@ void print_dir(const std::string dir)
     {
     
     directory_iterator end_itr; 
-    for ( directory_iterator itr( dir );
-                  itr != end_itr;
-                  ++itr )
-            {
-                cout << itr->path() << endl; 
-                cout << fs::file_size(itr->path() ) << endl;
-            }
+    
+           
+            for ( directory_iterator itr( dir );
+                      itr != end_itr;
+                      ++itr )                               
+                {    
+                    if( is_directory(itr->status()) ) 
+                        {
+                            if ( file_size( itr->path()) ) return true;
+                        } 
+                    
+                        else if (is_regular_file(itr->status()))
+                        {
+                            
+                            cout << itr->path() << endl; 
+                            cout << fs::file_size(itr->path() ) << endl;
+                            
+                        return true;    
+                        }   
+                }
+                                    
     }
 
 int file_size(int argc, char* argv[] ) 
