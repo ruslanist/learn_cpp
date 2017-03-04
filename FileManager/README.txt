@@ -9,3 +9,6 @@ cd build
 cmake ..
 make
 ./FileManager имя_файла_для_поиска
+
+
+cmake для сборки программы использует директивы из файла CMakeLists.txt
