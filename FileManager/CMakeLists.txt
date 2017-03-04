@@ -1,11 +1,21 @@
 cmake_minimum_required (VERSION 2.6)
+#Назвали проект
 project (FileManager)
+
+#Указали компилятору, что мы используем 11 стандарт с++
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+
+#Задали исходные файлы для компиляции. Ниже, к списку исходных файлов для компиляции будут обращаться через переменную {source_files}
 set(source_files 
 	${PROJECT_SOURCE_DIR}/src/FileManager.cpp
 	${PROJECT_SOURCE_DIR}/src/main.cpp
 )
+
+#Указали, где лежат заголовные файлы(хидеры) нашего проекта.
+#Переменная PROJECT_SOURCE_DIR хранит в себе путь к каталогу с проектом
 include_directories(AFTER ${PROJECT_SOURCE_DIR}/includes)
+
+#Команда, что бы найти хидеры и библиотеки  буста
 find_package(Boost REQUIRED COMPONENTS system filesystem)
 if (Boost_FOUND)
   # From the offical documentation:
@@ -27,5 +37,9 @@ else()
 endif ()
 
 
+#Указывает скомпилировать программу с именем, которое хранится в ${PROJECT_NAME} на основе исходных файлов из ${source_files}
+#В нашем случае переменная PROJECT_NAME хранит строку FileManager
 add_executable(${PROJECT_NAME} ${source_files})
+
+#Прилинковать бустовые библиотеки к программе
 target_link_libraries(${PROJECT_NAME} ${Boost_LIBRARIES})
