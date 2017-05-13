@@ -1,3 +1,5 @@
 all :
-	g++ main.cpp 
+	g++ main.cpp
+debug : 
+	g++ -g main.cpp 
  

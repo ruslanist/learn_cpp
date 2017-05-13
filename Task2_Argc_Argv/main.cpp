@@ -18,7 +18,7 @@ int main(int argc, char** argv)
 
     vector<int> myint_Vec;
 
-    for(int i=0; i<=argc; i++)
+    for(int i=0; i<argc; i++)
    	{
 
          int Num = 0;
@@ -31,8 +31,7 @@ int main(int argc, char** argv)
 		} else 
 		   {
 
-		    cout << "You did not enter more than one argument " << endl;
-                    cout << "Try the arguments again" << endl;
+		    cout << "Данный аргумент введен не коректно" << argv[i] <<  endl;
 
 		   }
 
