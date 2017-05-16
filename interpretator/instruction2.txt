@@ -1,0 +1,16 @@
+def func1 a b
+	print Позвали func1 со значениями аргументов "a" == a и "b" == b
+end
+
+def func2
+	call func1 100 200
+	call func1 ПЕРВЫЙ ВТОРОЙ
+	call func1 A B
+	call func1 a b
+end
+
+def func3
+	call func2
+end
+
+call func3
