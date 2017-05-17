@@ -94,27 +94,21 @@ int main(int argc, char** argv) {
                 
                 for(int i=0; i<argc; i++)
                    {
-        
+                    
                     int Num = 0;
 	 
 		    if(Num = atoi(argv[i]))
 
-			{
-
-                	     atoi(argv[i]); 
+			{ 
                      
-                    	     cout << argv[i] << endl;
-                                  
-                            
-			} else
+                    	 cout << Num << endl;
+
+        		} else 
+
 				{
-
 				 cout << "Данный аргумент введен не коректно" << argv[i] <<  endl;
-				
 				}
-        
-
-                    }
+                   }
                 
                                             
                    break;  
