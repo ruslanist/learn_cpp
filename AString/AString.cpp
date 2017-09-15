@@ -24,14 +24,14 @@ class AString {
 		~AString() {
 	//		delete internBuf;
 		}
-		size_t find_first_of(char ch) {
+		size_t find_first_of(char ch) const {
 			for(size_t i = 0; i < bufLen; i++) {
 				if(internBuf[i] == ch)
 					return i;
 			}
 			return npos;
 		}
-		size_t find_last_of(char ch) {
+		size_t find_last_of(char ch) const {
 			throw NotImpl("'find_last_of' not implemented yet");
 		}
 		const char* c_str() const {
