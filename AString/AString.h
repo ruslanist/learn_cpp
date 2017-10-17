@@ -59,6 +59,15 @@ class AString {
 		const char* c_str() const; // Функция
                 
                 AString& append(const char* input); // Прототип метода для обеденения строк
+
+		//Реализовать функцию prepend.
+		//Она добавляет строку из input в начало той строки, что хранится в объекте AString.
+		//Например:
+		//AString str("Hello");
+		//str.prepend("My Friend);
+		//std::cout << str.c_str() << std::endl;
+		//cout строчкой выше должен вывести: "My Friend Hello"
+		AString& prepend(const char* input);
 	private: 
 		char * internBuf;
 		size_t bufLen;
