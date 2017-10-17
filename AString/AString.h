@@ -1,7 +1,6 @@
 /*
- Заголовочный Файл обявляющий Класс и конструкторы  NotImp,  AString, Диструктор
- *  AString, приват Поля.
- * Функции find_first_of(), find_last_of(), c_str().
+ * Заголовочный файл содержащий интерфейс программы, совокупность классов и
+ * методов приложения
  */
 
 /* 
@@ -51,7 +50,7 @@ class AString {
 		//Например если есть строка "......word...."
 		//и на нее зовут find_first_not_of(.)  - т.е. искать первый символ, не равный точке
 		//то она вернет 6 индекс, на 6 индексе находится буква w
-		size_t find_first_not_of(char ch) const;
+		size_t find_first_not_of(char ch) const; // A               
 
 		size_t find_first_of(char ch) const; // Функция
                 
@@ -59,7 +58,8 @@ class AString {
                 
 		const char* c_str() const; // Функция
                 
-	private:
+                AString& append(const char* input); // Прототип метода для обеденения строк
+	private: 
 		char * internBuf;
 		size_t bufLen;
 

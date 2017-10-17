@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Файл содержащий реализацию программы
  */
 
 /* 
@@ -28,9 +26,26 @@ AString::AString(const char* input) {
 			strcpy(internBuf, input);
 		}
 
+AString::AString(const char* input, size_t len) {
+
+                    internBuf = new char[len+1]; // (+1) Это для выделения доп места под (\0)
+                    bufLen = len+1; // (+1) Это для выделения доп места под (\0)
+                    memcpy( internBuf, input, len); 
+                    internBuf[len] = '\0'; // Задаем (\0).
+                }
+
 AString::~AString() {
-	//		delete internBuf;
+			delete[] internBuf;
 		}
+
+size_t AString::find_first_not_of(char ch) const {
+
+    for(size_t i = 0; i < bufLen; i++) {
+                        
+        if(internBuf[i] != ch)
+            return i;
+    }
+}
 
 size_t AString::find_first_of(char ch) const {
 			for(size_t i = 0; i < bufLen; i++) {
@@ -45,6 +60,17 @@ size_t AString::find_last_of(char ch) const {
 		} // Конец Функции find_last_of()  
 
 const char* AString::c_str() const {
-                    return internBuf;
-
+    return internBuf;
 } // Конец Функции c_str().
+
+AString& AString::append(const char* input) {
+
+   size_t inputLen = strlen(input); 
+   char* p = new char[inputLen+bufLen+1];
+   memcpy(p, internBuf, bufLen);
+   memcpy(p+bufLen, input, inputLen);
+   p[inputLen+bufLen] = '\0';
+   delete[] internBuf;
+   internBuf = p; 
+   bufLen = inputLen+bufLen;
+}
