@@ -24,6 +24,7 @@ int main() {
 		// str.find_last_of('T');
                 std::cout << str.c_str() << std::endl;
                 str.append("Helloy My Program").append("Go too Paty");
+                str.prepend("I Just Do It!!!");
                 std::cout << str.c_str() << std::endl;
 	} catch(const NotImpl& e) {
 		std::cout << e.what() << std::endl;

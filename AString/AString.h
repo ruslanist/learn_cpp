@@ -68,6 +68,8 @@ class AString {
 		//std::cout << str.c_str() << std::endl;
 		//cout строчкой выше должен вывести: "My Friend Hello"
 		AString& prepend(const char* input);
+                
+                
 	private: 
 		char * internBuf;
 		size_t bufLen;
