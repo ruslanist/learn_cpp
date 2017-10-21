@@ -31,8 +31,34 @@ class NotImpl : public std::runtime_error {
 // Определение Класса AString
 class AString {
 	public:
+
 		const static size_t npos = -1;
                 
+		/*
+		 * Ниже я задал прототип конструктора копирования. Нужно реализовать его тело в cpp файле.
+		 * ПРо конструкторы копирования можно в этих двух статьях получить инфу
+		 * http://cppstudio.com/post/9903/
+		 * https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D0%BE%D1%80_%D0%BA%D0%BE%D0%BF%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F
+		 * Плюс, в прате и вдейтле полюбому должна быть инфа о них, надо смотреть по предметному указателю, в конце книги
+		 *
+		 * Вот пример, когда вызывается этот конструктор.
+		 * AString str("Hello1"); //создали первый объект, тут позоветься обычный конструктор
+		 * AString str2 = str; //создаем второй объект и инициализируем его первым str. В этот момент будет вызван именно этот копирующий конструктор
+		 * В теле этого копирующего конструктора должен быть реализован следующий алгоритм:
+		 * 1. str.bufLen должнен быть присвоен в str2.bufLen.
+		 * 2. для str2.internBuf через new выделяют память размером str2.bufLen
+		 * 3. в str2.internBuf через memcpy копируют из str.internBuf память, длинной str.bufLen
+		 *
+		 * В теле копирующего конструктора, можно обращаться к приватным полям из other.
+		 * Ну т.е.
+		 * AString::AString(const AString& other) {
+		 * 	//какой-то код
+		 * 	bufLen = other.bufLen; // вот эта строчка копирует в bufLen ЭТОГО объекта, bufLen из объекта other. И ему пофиг, что bufLen в привате.
+		 * 	//какой-то код
+		 * }
+		 */
+		AString(const AString& other); //Копирующий конструктор.
+		
 		AString(const char* input); // Конструктор
 
 		//Сделать реализацию для этого конструктора.
@@ -68,6 +94,8 @@ class AString {
 		//std::cout << str.c_str() << std::endl;
 		//cout строчкой выше должен вывести: "My Friend Hello"
 		AString& prepend(const char* input);
+
+
                 
                 
 	private: 
