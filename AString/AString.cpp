@@ -83,7 +83,7 @@ AString& AString::prepend(const char* input) {
     size_t inputLen_2 = strlen(input);
     char* p2 = new char[inputLen_2+bufLen+1];
     memcpy(p2, input, inputLen_2);
-    memcpy(p2+bufLen, internBuf, bufLen);
+    memcpy(p2+inputLen_2, internBuf, bufLen);
     p2[inputLen_2+bufLen] = '\0';
     delete[] internBuf;
     internBuf = p2;
