@@ -20,6 +20,7 @@ int main() {
     
 	try {
 		AString str("....TEST STRING #");
+                AString str2 = str;
 		std::cout << str.find_first_of('#') << std::endl;
 		// str.find_last_of('T');
                 std::cout << str.c_str() << std::endl;
@@ -37,4 +38,7 @@ int main() {
         std::cout << objekt1.c_str() << std::endl;
     }
     //std::cout << objekt1.find_first_not_of(' ');
+    
+    
+    
 }  

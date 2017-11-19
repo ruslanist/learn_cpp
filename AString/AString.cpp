@@ -20,6 +20,15 @@ using namespace std;
 
 NotImpl::NotImpl(const char* reason) : std::runtime_error(reason) {}
 
+// Ниже представлена Реализация Копирующего Конструктора.
+AString::AString(const AString& other) {
+    
+                        bufLen = other.bufLen;                                         
+                        internBuf = new char[bufLen + 1];
+                        memcpy(internBuf, other.internBuf, bufLen);
+                        
+                }
+
 AString::AString(const char* input) {
 			bufLen = strlen(input);
 			internBuf = new char[bufLen + 1 /*for '\0'*/];
