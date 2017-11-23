@@ -11,8 +11,10 @@
 #include "AString.h"
 
 int main() {
-    
-    size_t len;
+   
+   // Кодпосле Реализующий Копирующего Конструктора. 
+ 
+   /* size_t len;
     
     std::cout << "Введите интересующее Вас количество символов в тексте" 
             << "Которые желаете вывести и сохронить" << std::endl;
@@ -38,7 +40,22 @@ int main() {
         std::cout << objekt1.c_str() << std::endl;
     }
     //std::cout << objekt1.find_first_not_of(' ');
+    */
+// Кодпосле Реализующий Копирующего Конструктора. 
     
+
+// Новый Код:
+
+     AString obj1("Hello World");
     
+     AString obj2 = obj1;
+
+     std::cout << obj1.c_str() << std::endl;
+     std::cout << obj2.c_str() << std::endl;
+    
+     AString obj3("Godbye World");
+     obj2 = obj3;
+     std::cout << obj2.c_str() << std::endl;
+
     
 }  

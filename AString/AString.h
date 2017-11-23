@@ -20,6 +20,7 @@
 #include<stdexcept>
 #include<iostream>
 #include<cstring>
+#include<memory>
 
 class NotImpl : public std::runtime_error {
 	public:
@@ -69,7 +70,6 @@ class AString {
 		//ее нужно использовать, что бы скопировать заданную часть строки в свой внутренний буфер
 		AString(const char* input, size_t len);
 
-		~AString(); // Диструктор
                 
 		//Реализовать эту функцию.
 		//Суть ее работы в том, что она возвращает индекс первого символа, не равного ch
@@ -99,7 +99,7 @@ class AString {
                 
                 
 	private: 
-		char * internBuf;
+		std::unique_ptr <char *> internBuf;
 		size_t bufLen;
 
 }; // Конец Класса 

@@ -13,6 +13,8 @@
 #include<stdexcept>
 #include<iostream>
 #include<cstring>
+#include<memory>
+
 using namespace std;
 
 #include "AString.h" // Поидерадключение класа AString
@@ -24,28 +26,24 @@ NotImpl::NotImpl(const char* reason) : std::runtime_error(reason) {}
 AString::AString(const AString& other) {
     
                         bufLen = other.bufLen;                                         
-                        internBuf = new char[bufLen + 1];
-                        memcpy(internBuf, other.internBuf, bufLen);
+                        internBuf.reset(new char[bufLen + 1]);
+                        memcpy(internBuf.get(), other.internBuf.get(), bufLen);
                         
                 }
 
 AString::AString(const char* input) {
 			bufLen = strlen(input);
-			internBuf = new char[bufLen + 1 /*for '\0'*/];
-			strcpy(internBuf, input);
+			internBuf.reset(char[bufLen + 1 /*for '\0'*/]);
+			strcpy(internBuf.get(), input);
 		}
 
 AString::AString(const char* input, size_t len) {
 
-                    internBuf = new char[len+1]; // (+1) Это для выделения доп места под (\0)
+                    internBuf.reset(new char[len+1]); // (+1) Это для выделения доп места под (\0)
                     bufLen = len+1; // (+1) Это для выделения доп места под (\0)
-                    memcpy( internBuf, input, len); 
+                    memcpy( internBuf.get(), input, len); 
                     internBuf[len] = '\0'; // Задаем (\0).
-                }
-
-AString::~AString() {
-			delete[] internBuf;
-		}
+                }	      		
 
 size_t AString::find_first_not_of(char ch) const {
 
@@ -69,18 +67,17 @@ size_t AString::find_last_of(char ch) const {
 		} // Конец Функции find_last_of()  
 
 const char* AString::c_str() const {
-    return internBuf;
+    return internBuf.get();
 } // Конец Функции c_str().
 
 AString& AString::append(const char* input) {
 
    size_t inputLen = strlen(input); 
    char* p = new char[inputLen+bufLen+1];
-   memcpy(p, internBuf, bufLen);
+   memcpy(p, internBuf.get(), bufLen);
    memcpy(p+bufLen, input, inputLen);
    p[inputLen+bufLen] = '\0';
-   delete[] internBuf;
-   internBuf = p; 
+   internBuf.reset(p); 
    bufLen = inputLen+bufLen;
    
         return *this;
@@ -92,10 +89,9 @@ AString& AString::prepend(const char* input) {
     size_t inputLen_2 = strlen(input);
     char* p2 = new char[inputLen_2+bufLen+1];
     memcpy(p2, input, inputLen_2);
-    memcpy(p2+inputLen_2, internBuf, bufLen);
+    memcpy(p2+inputLen_2, internBuf.get(), bufLen);
     p2[inputLen_2+bufLen] = '\0';
-    delete[] internBuf;
-    internBuf = p2;
+    internBuf.reset(p2);
     bufLen = inputLen_2+bufLen;
         
         return *this;
