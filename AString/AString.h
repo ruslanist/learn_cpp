@@ -59,6 +59,8 @@ class AString {
 		 * }
 		 */
 		AString(const AString& other); //Копирующий конструктор.
+                
+                AString& operator=(const AString& other); //Объявление Оператор присвоения Копированием.
 		
 		AString(const char* input); // Конструктор
 
@@ -99,7 +101,7 @@ class AString {
                 
                 
 	private: 
-		std::unique_ptr <char *> internBuf;
+		std::unique_ptr<char[]> internBuf;
 		size_t bufLen;
 
 }; // Конец Класса 
