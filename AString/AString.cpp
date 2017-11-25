@@ -32,7 +32,7 @@ AString::AString(const AString& other) {
                 }
 
 // Оператор Определения Копирования
-AString::operator =(const AString& other) {
+AString& AString::operator=(const AString& other) {
 
                         bufLen = other.bufLen;                                         
                         internBuf.reset(new char[bufLen + 1]);
@@ -83,10 +83,10 @@ AString& AString::append(const char* input) {
 
    size_t inputLen = strlen(input); 
    std::unique_ptr<char[]> p(new char[inputLen+bufLen+1]);
-   memcpy(p, internBuf.get(), bufLen);
-   memcpy(p+bufLen, input, inputLen);
+   memcpy(p.get(), internBuf.get(), bufLen);
+   memcpy(p.get()+bufLen, input, inputLen);
    p[inputLen+bufLen] = '\0';
-   internBuf.reset(p); 
+   internBuf = std::move(p); 
    bufLen = inputLen+bufLen;
    
         return *this;
@@ -97,10 +97,10 @@ AString& AString::prepend(const char* input) {
 
     size_t inputLen_2 = strlen(input);
     std::unique_ptr<char[]> p2(new char[inputLen_2+bufLen+1]);
-    memcpy(p2, input, inputLen_2);
-    memcpy(p2+inputLen_2, internBuf.get(), bufLen);
+    memcpy(p2.get(), input, inputLen_2);
+    memcpy(p2.get()+inputLen_2, internBuf.get(), bufLen);
     p2[inputLen_2+bufLen] = '\0';
-    internBuf.reset(p2);
+    internBuf = std::move(p2);
     bufLen = inputLen_2+bufLen;
         
         return *this;

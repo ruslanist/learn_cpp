@@ -60,7 +60,7 @@ class AString {
 		 */
 		AString(const AString& other); //Копирующий конструктор.
                 
-                AString& operator=(const AString& other); //Объявление Оператор присвоения Копированием.
+        AString& operator=(const AString& other); //Объявление Оператор присвоения Копированием.
 		
 		AString(const char* input); // Конструктор
 
@@ -86,7 +86,7 @@ class AString {
                 
 		const char* c_str() const; // Функция
                 
-                AString& append(const char* input); // Прототип метода для обеденения строк
+        AString& append(const char* input); // Прототип метода для обеденения строк
 
 		//Реализовать функцию prepend.
 		//Она добавляет строку из input в начало той строки, что хранится в объекте AString.
