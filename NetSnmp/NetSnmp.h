@@ -27,7 +27,7 @@ class NetSnmp {
         public:
                 NetSnmp(string net_ip, string net_communiti);
                 
-                ~NetSnmp();
+                
                 
                 void send(string aid);
                 

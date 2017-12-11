@@ -15,7 +15,10 @@
 
 #endif /* NETSNMPDELET_H */
 
-#include "NetSnmp.h"
+
+#include<net-snmp/net-snmp-config.h>
+#include<net-snmp/net-snmp-includes.h>
+#include<string>
 #include<memory>
 
 class NetSnmpDelet {

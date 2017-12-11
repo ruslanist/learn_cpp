@@ -31,7 +31,8 @@ using std::endl;
         session.community = (u_char*)community.c_str();
         session.community_len = strlen((const char*) session.community);
         
-        std::unique_ptr<struct snmp_session, NetSnmpDelet> ss(snmp_open(&session));
+        ss.reset(snmp_open(&session));
+        // std::unique_ptr<struct snmp_session, NetSnmpDelet> ss(snmp_open(&session));
         if(!ss.get()) {
             
             //ошибка, тут надо написать код, который кинет эксцепшен с 
@@ -40,12 +41,8 @@ using std::endl;
         }    
     }
 
-     NetSnmp::~NetSnmp() {
     
-        std::unique_ptr<struct snmp_session, NetSnmpDelet> ss(snmp_close(ss.get()));
-    }
-    
-    void NetSnmp::send(string aid) {
+    void NetSnmp::send(string aid) { 
     
         struct snmp_pdu *pdu = snmp_pdu_create(SNMP_MSG_GET);
         oid anOID[MAX_OID_LEN];
@@ -66,6 +63,5 @@ using std::endl;
     
     void NetSnmpDelet::operator ()(snmp_session* snmptr) {
     
-        delete [] snmptr
     
     }
