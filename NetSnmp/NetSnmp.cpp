@@ -33,11 +33,18 @@ using std::endl;
         
         ss.reset(snmp_open(&session));
         // std::unique_ptr<struct snmp_session, NetSnmpDelet> ss(snmp_open(&session));
+        
+        
         if(!ss.get()) {
             
-            //ошибка, тут надо написать код, который кинет эксцепшен с 
-            //сообщением, что не удалось открыть сессию snmp
-            
+            try {
+                    std::runtime_exception("fail to open snmp_session");
+            }
+            catch(...) { 
+                cout << "Не удалось открыть snmp сесию" 
+                        << std::runtime_error endl;
+        
+            }
         }    
     }
 
