@@ -20,6 +20,7 @@
 #include<memory>
 #include"NetSnmpDelet.h"
 #include "NetSnmpDeletPdu.h"
+#include "NetSnmpDeletResponse.h"
 
 using std::string;
 
@@ -30,7 +31,7 @@ class NetSnmp {
                 
                 
                 
-                void send(string aid);
+                std::unique_ptr<snmp_pdu, NetSnmpDeletPdu> send(string aid);
                 
    
 

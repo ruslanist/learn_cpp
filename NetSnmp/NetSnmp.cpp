@@ -43,7 +43,7 @@ using std::endl;
     }
 
     
-    void NetSnmp::send(string aid) { 
+    std::unique_ptr<snmp_pdu, NetSnmpDeletPdu> NetSnmp::send(string aid) { 
         
         std::unique_ptr<snmp_pdu, NetSnmpDeletPdu> pdu;
         pdu.reset(snmp_pdu_create(SNMP_MSG_GET));
@@ -53,23 +53,29 @@ using std::endl;
      
         read_objid(aid.c_str(), anOID, &anOID_len);
         snmp_add_null_var(pdu.get(), anOID, anOID_len);
-        snmp_pdu *response = nullptr;
-        int status = snmp_synch_response(ss.get(), pdu.get(), &response);
+        std::unique_ptr<snmp_pdu, NetSnmpDeletResponse> response;
+        response.reset(nullptr);
+        snmp_synch_response(ss.get(), pdu.get(), &response.get());
         
-        if(response) {
+        if(status != STAT_SUCCESS || response.get()->errstat != SNMP_ERR_NOERROR) {
           
-        
+            return nullptr;
         }
     
     }
     
     
-    void NetSnmpDeletPdu::operator () (snmp_pdu *response) { 
+    void NetSnmpDeletPdu::operator () (snmp_pdu* netsnmp_pdu) { 
             
-            snmp_free_pdu(response);
+            snmp_free_pdu(netsnmp_pdu);
         }
     
     void NetSnmpDelet::operator ()(snmp_session* snmptr) {
     
        snmp_close(snmptr); 
+    }
+    
+    void NetSnmpDeletResponse::operator ()(snmp_pdu* netsnmp_response) {
+    
+        snmp_free_pdu(netsnmp_response);
     }
