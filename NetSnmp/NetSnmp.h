@@ -35,8 +35,8 @@ class NetSnmp {
    
 
         private:
-            struct snmp_session session;
-            std::unique_ptr<struct snmp_session, NetSnmpDelet> ss;
+            snmp_session session;
+            std::unique_ptr<snmp_session, NetSnmpDelet> ss;
             
             string ip;
             string community;

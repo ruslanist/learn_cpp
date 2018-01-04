@@ -38,39 +38,38 @@ using std::endl;
         if(!ss.get()) {
             
            
-                    throw std::std::runtime_error("fail to open snmp_session");        
+                    throw std::runtime_error("fail to open snmp_session");        
         }    
     }
 
     
     void NetSnmp::send(string aid) { 
         
-        std::unique_ptr<string> *pdu;
-        struct snmp_pdu *pdu.reset(snmp_pdu_create(SNMP_MSG_GET));
+        std::unique_ptr<snmp_pdu, NetSnmpDeletPdu> pdu;
+        pdu.reset(snmp_pdu_create(SNMP_MSG_GET));
         oid anOID[MAX_OID_LEN];
         size_t anOID_len = MAX_OID_LEN; 
         
      
         read_objid(aid.c_str(), anOID, &anOID_len);
         snmp_add_null_var(pdu.get(), anOID, anOID_len);
-        struct snmp_pdu *response = nullptr;
+        snmp_pdu *response = nullptr;
         int status = snmp_synch_response(ss.get(), pdu.get(), &response);
         
         if(response) {
           
         
-        void NetSnmpDeletPdu::operator () (snmp_pdu *response) { 
+        }
+    
+    }
+    
+    
+    void NetSnmpDeletPdu::operator () (snmp_pdu *response) { 
             
             snmp_free_pdu(response);
         }
-        
-        }
-    
-    
     
     void NetSnmpDelet::operator ()(snmp_session* snmptr) {
     
        snmp_close(snmptr); 
-    }
-    
     }
