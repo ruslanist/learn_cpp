@@ -19,6 +19,7 @@
 #include<string>
 #include<memory>
 #include"NetSnmpDelet.h"
+#include "NetSnmpDeletPdu.h"
 
 using std::string;
 
@@ -36,6 +37,7 @@ class NetSnmp {
         private:
             struct snmp_session session;
             std::unique_ptr<struct snmp_session, NetSnmpDelet> ss;
+            
             string ip;
             string community;
             

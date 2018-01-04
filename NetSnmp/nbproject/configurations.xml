@@ -12,6 +12,7 @@
                    projectFiles="true">
       <itemPath>NetSnmp.h</itemPath>
       <itemPath>NetSnmpDelet.h</itemPath>
+      <itemPath>NetSnmpDeletPdu.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Файлы ресурсов"
@@ -45,6 +46,8 @@
       </item>
       <item path="NetSnmpDelet.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="NetSnmpDeletPdu.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
@@ -73,6 +76,8 @@
       <item path="NetSnmp.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="NetSnmpDelet.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="NetSnmpDeletPdu.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
