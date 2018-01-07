@@ -20,18 +20,17 @@
 #include<memory>
 #include"NetSnmpDelet.h"
 #include "NetSnmpDeletPdu.h"
-#include "NetSnmpDeletResponse.h"
 
 using std::string;
 
 class NetSnmp {
         
         public:
-                NetSnmp(string net_ip, string net_communiti);
+                NetSnmp(const string &net_ip, const string &net_communiti);
                 
                 
                 
-                std::unique_ptr<snmp_pdu, NetSnmpDeletPdu> send(string aid);
+                std::unique_ptr<snmp_pdu, NetSnmpDeletPdu> send(const string &aid) const;
                 
    
 

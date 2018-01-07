@@ -25,7 +25,7 @@ class NetSnmpDeletPdu {
 
 public:
     void operator()(snmp_pdu *netsnmp_pdu);
-
+    
 };
 
 #endif /* NETSNMPDELETPDU_H */
