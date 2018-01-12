@@ -55,14 +55,16 @@ using std::endl;
         snmp_add_null_var(pdu.get(), anOID, anOID_len);
         std::unique_ptr<snmp_pdu, NetSnmpDeletPdu> response;
         
-        snmp_pdu *temp =response.get();
+        snmp_pdu *temp =nullptr;
         int status = snmp_synch_response(ss.get(), pdu.get(), &temp);
-        
+        std::unique_ptr<snmp_pdu, NetSnmpDeletPdu> response(temp);
         
         if(status != STAT_SUCCESS || response.get()->errstat != SNMP_ERR_NOERROR) {
           
             return nullptr;
         }
+        
+        return response;
     
     }
     
