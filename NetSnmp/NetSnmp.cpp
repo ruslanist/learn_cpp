@@ -38,7 +38,7 @@ using std::endl;
         if(!ss.get()) {
             
            
-                    throw std::runtime_error("fail to open snmp_session");        
+                    throw SnmpError("fail to open snmp_session");        
         }    
     }
 

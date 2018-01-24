@@ -18,10 +18,19 @@
 #include<net-snmp/net-snmp-includes.h>
 #include<string>
 #include<memory>
+#include<stdexcept>
 #include"NetSnmpDelet.h"
 #include "NetSnmpDeletPdu.h"
 
 using std::string;
+
+
+class SnmpError : public std::runtime_error {
+    
+    public:
+           SnmpError::SnmpError();
+    
+}; // Конец Клас Наследник от базового библиотечного Класса runtime_error
 
 class NetSnmp {
         
