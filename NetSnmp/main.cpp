@@ -11,6 +11,7 @@
 
 #include <cstdlib>
 #include<iostream>
+#include"SnmpError.h"
 
 
 using namespace std;
@@ -22,7 +23,7 @@ int main(int argc, char** argv) {
    
    } // Конец Блока try
    
-   catch(SnmpError &snmpError) {
+   catch(const SnmpError &snmpError) {
        
        cout << "Произошло Исключение - Ошибка: " << snmpError.what() << endl;
        

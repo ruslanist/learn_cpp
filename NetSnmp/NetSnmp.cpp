@@ -14,12 +14,15 @@
 #include "NetSnmp.h"
 #include<string>
 #include<memory>
+#include"SnmpError.h"
 
 using std::string;
 using std::cout;
 using std::endl;
 
-
+     
+    SnmpError::SnmpError(const string& err) : std::runtime_error(err) {}
+    
     NetSnmp::NetSnmp(const string &net_ip, const string &net_community) {
        
         init_snmp("snmpapp");

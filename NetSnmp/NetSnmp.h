@@ -25,14 +25,7 @@
 using std::string;
 
 
-class SnmpError : public std::runtime_error {
-    
-    public:
-           SnmpError::SnmpError();
-    
-}; // Конец Клас Наследник от базового библиотечного Класса runtime_error
-
-class NetSnmp {
+class NetSnmp { 
         
         public:
                 NetSnmp(const string &net_ip, const string &net_communiti);
