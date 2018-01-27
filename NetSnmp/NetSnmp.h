@@ -27,19 +27,16 @@ class NetSnmp {
         public:
                 NetSnmp(const string &net_ip, const string &net_communiti);
                 
-               string getString(const string& aid); 
-                
-                std::unique_ptr<snmp_pdu, NetSnmpDeletPdu> send(const string &aid) const;
+                string getString(const string& aid) const;
+
+                long getInt(const string& aid) const;
+
+                std::unique_ptr<netsnmp_pdu, NetSnmpDeletPdu> send(const string &aid) const;
                 
    
 
         private:
-            snmp_session session;
-            std::unique_ptr<snmp_session, NetSnmpDelet> ss;
-            
-            string ip;
-            string community;
-            
+            std::unique_ptr<netsnmp_session, NetSnmpDelet> ss;
 }; // Конец класса
 
 

@@ -25,7 +25,7 @@ using namespace std;
 class NetSnmpDeletPdu {
 
 public:
-    void operator()(snmp_pdu *netsnmp_pdu);
+    void operator()(netsnmp_pdu *pdu);
     
 };
 

@@ -24,7 +24,7 @@ class NetSnmpDelet {
 
 public:
     
-    void operator()(snmp_session *snmptr); 
+    void operator()(netsnmp_session *ses);
 
 
 } ; // Конец Класса
