@@ -46,7 +46,7 @@ using std::endl;
     }
 
     
-    NetSnmp::getString(const string& aid) {
+      string NetSnmp::getString(const string& aid) {
     
       auto result = send(aid);
     

@@ -9,6 +9,9 @@
  * Created on 4 декабря 2017 г., 2:05
  */
 
+#ifndef NETSNMP_H
+#define NETSNMP_H
+
 #include<net-snmp/net-snmp-config.h>
 #include<net-snmp/net-snmp-includes.h>
 #include<string>
@@ -18,9 +21,6 @@
 #include "NetSnmpDeletPdu.h"
 
 using std::string;
-
-#ifndef NETSNMP_H
-#define NETSNMP_H
 
 class NetSnmp { 
         

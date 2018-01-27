@@ -9,14 +9,15 @@
  * Created on 26 января 2018 г., 23:19
  */
 
+#ifndef SNMPERROR_H
+#define SNMPERROR_H
+
 #include<stdexcept>
 #include<string>
 
 using std::string;
 using namespace std;
 
-#ifndef SNMPERROR_H
-#define SNMPERROR_H
 
 class SnmpError : public std::runtime_error {
     
