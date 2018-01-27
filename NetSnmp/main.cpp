@@ -26,9 +26,14 @@ int main(int argc, char** argv) {
    catch(const SnmpError &snmpError) {
        
        cout << "Произошло Исключение - Ошибка: " << snmpError.what() << endl;
-       
-       
+          
    } // Конец catch
+   
+   catch(...) {
+   
+       cout << "В программе произошла не известная ошибка" << endl;
+       
+   } //Конец catch2
     
     return 0;
 }

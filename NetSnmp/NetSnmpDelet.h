@@ -10,16 +10,15 @@
  * Created on 10 декабря 2017 г., 4:01
  */
 
-#ifndef NETSNMPDELET_H
-#define NETSNMPDELET_H
-
-#endif /* NETSNMPDELET_H */
-
-
 #include<net-snmp/net-snmp-config.h>
 #include<net-snmp/net-snmp-includes.h>
 #include<string>
 #include<memory>
+using namespace std;
+
+
+#ifndef NETSNMPDELET_H
+#define NETSNMPDELET_H
 
 class NetSnmpDelet {
 
@@ -30,3 +29,4 @@ public:
 
 } ; // Конец Класса
 
+#endif /* NETSNMPDELET_H */
