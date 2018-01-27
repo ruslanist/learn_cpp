@@ -46,6 +46,12 @@ using std::endl;
     }
 
     
+    NetSnmp::getString(const string& aid) {
+    
+      auto result = send(aid);
+    
+    }
+    
     std::unique_ptr<snmp_pdu, NetSnmpDeletPdu> NetSnmp::send(const string &aid) const { 
         
         std::unique_ptr<snmp_pdu, NetSnmpDeletPdu> pdu(snmp_pdu_create(SNMP_MSG_GET));
@@ -64,7 +70,7 @@ using std::endl;
         
         if(status != STAT_SUCCESS || response.get()->errstat != SNMP_ERR_NOERROR) {
           
-            return nullptr;
+            throw SnmpError("fail to send");
         }
         
         return response;

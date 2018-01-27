@@ -27,7 +27,7 @@ class NetSnmp {
         public:
                 NetSnmp(const string &net_ip, const string &net_communiti);
                 
-                
+               string getString(const string& aid); 
                 
                 std::unique_ptr<snmp_pdu, NetSnmpDeletPdu> send(const string &aid) const;
                 
