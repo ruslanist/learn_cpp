@@ -51,12 +51,43 @@ using std::endl;
           if (vars->type == ASN_INTEGER)
               return *vars->val.integer;
         }
-
+       
         throw SnmpError("fail to getInt");
     }
 
     string NetSnmp::getString(const string& aid) const {
         auto result = send(aid);
+        
+        for(variable_list * vars = result->variables; vars; vars = vars->next_variable) {
+            if (vars->type == ASN_OCTET_STR) { // Проверка Условия
+                
+                // Создания строковой тпеременной "String" хранящая парараметры Область памяти библиотеки и кол-во байт
+                string str(vars->val.string, vars->val_len);
+                    cout << str << endl; // Вывод Значения str
+                
+                    return str; // Возвращает значения str 
+            }
+        }
+        
+        
+        
+        /*for(variable_list * vars = result->variables; vars; vars = vars->next_variable) {
+          if (vars->type == ASN_OCTET_STR)
+              char *sp = (char *)malloc(1 + vars->val_len);
+                memcpy(ps, vars->val.string, vars->val_len);
+                sp[vars->val_len] = '0';
+                printf("value #%d is a string: %s\n", count++, sp);
+                
+                free(sp);
+          
+              return *vars->val.integer;*/
+        
+        }
+        
+        
+        
+        
+        
         /*
          * Система сохраняет строковые вещи с типом ASN_OCTET_STR
          * Вот кусок из сишной доки, как они парсят строки
