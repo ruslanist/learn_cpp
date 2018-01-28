@@ -65,7 +65,7 @@ using std::endl;
                 string str(vars->val.string, vars->val_len);
                     cout << str << endl; // Вывод Значения str
                 
-                    return str; // Возвращает значения str 
+                    return string(vars->val.string, vars->val_len);//Возвращает значения str 
             }
         }
         
