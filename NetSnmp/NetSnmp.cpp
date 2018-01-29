@@ -63,24 +63,13 @@ using std::endl;
                 
                 // Создания строковой тпеременной "String" хранящая парараметры Область памяти библиотеки и кол-во байт
                 string str(vars->val.string, vars->val_len);
-                    cout << str << endl; // Вывод Значения str
-                
-                    return string(vars->val.string, vars->val_len);//Возвращает значения str 
+                    
+              return string(vars->val.string, vars->val_len);//Возвращает значения str  
+                    
             }
         }
         
-        
-        
-        /*for(variable_list * vars = result->variables; vars; vars = vars->next_variable) {
-          if (vars->type == ASN_OCTET_STR)
-              char *sp = (char *)malloc(1 + vars->val_len);
-                memcpy(ps, vars->val.string, vars->val_len);
-                sp[vars->val_len] = '0';
-                printf("value #%d is a string: %s\n", count++, sp);
-                
-                free(sp);
-          
-              return *vars->val.integer;*/
+         
         
         }
         
@@ -146,8 +135,6 @@ using std::endl;
          * Теперь, прочитав все это, сделай такой-же if как у них в сишной теме, но в нем для считывания строки
          * из библиотечных кишков используй этот конструктор и создай строку и верни ее из этой функции.
          */
-        return "";
-    }
     
     std::unique_ptr<netsnmp_pdu, NetSnmpDeletPdu> NetSnmp::send(const string &aid) const {
         //Похоже что мы не должны это освобождать
