@@ -30,12 +30,9 @@ int main(int argc, char** argv) {
         NetSnmp netSnmp("127.0.0.1", "public");
         cout << "Количество функций, которое предоставляет это оборудование: " << netSnmp.getInt("1.3.6.1.2.1.1.7.0") << endl;
    
+        cout << "Определение вендора/модели/Имя устройства: " << netSnmp.getString("1.3.6.1.2.1.1.1.0") << endl;
         
-        NetSnmp snmpAid("1.3.6.1.2.1.1.1.0", "public");
-        cout << "Определение вендора/модели/Имя устройства: " << snmpAid.getString("1.3.6.1.2.1.1.1.0") << endl;
-        
-        NetSnmp snmpAid("1.3.6.1.4.1.9.10.24.1.1.2.0", "public");
-        cout << "Число юзеров активных всего (SessionTotal): " << snmpAid.getString("1.3.6.1.4.1.9.10.24.1.1.2.0") << endl;
+        cout << "Число юзеров активных всего (SessionTotal): " << netSnmp.getString("3.6.1.2.1.1.9.1.3.1") << endl;
         
    } // Конец Блока try
    
