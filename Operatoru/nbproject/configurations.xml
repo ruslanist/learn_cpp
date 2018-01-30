@@ -4,15 +4,15 @@
     <logicalFolder name="SourceFiles"
                    displayName="Исходные файлы"
                    projectFiles="true">
-      <itemPath>OperatoruCpp.cpp</itemPath>
+      <itemPath>OperatorsCpp.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="HeaderFiles"
                    displayName="Файлы заголовков"
                    projectFiles="true">
-      <itemPath>OperatoruBase.h</itemPath>
-      <itemPath>OperatoruSsulka.h</itemPath>
-      <itemPath>OperatoruUkazatel.h</itemPath>
+      <itemPath>OperatorsBase.h</itemPath>
+      <itemPath>OperatorsLink.h</itemPath>
+      <itemPath>OperatorsPointers.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Файлы ресурсов"
@@ -40,13 +40,13 @@
       </toolsSet>
       <compileType>
       </compileType>
-      <item path="OperatoruBase.h" ex="false" tool="3" flavor2="0">
+      <item path="OperatorsBase.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="OperatoruCpp.cpp" ex="false" tool="1" flavor2="0">
+      <item path="OperatorsCpp.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="OperatoruSsulka.h" ex="false" tool="3" flavor2="0">
+      <item path="OperatorsLink.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="OperatoruUkazatel.h" ex="false" tool="3" flavor2="0">
+      <item path="OperatorsPointers.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -71,13 +71,13 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
-      <item path="OperatoruBase.h" ex="false" tool="3" flavor2="0">
+      <item path="OperatorsBase.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="OperatoruCpp.cpp" ex="false" tool="1" flavor2="0">
+      <item path="OperatorsCpp.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="OperatoruSsulka.h" ex="false" tool="3" flavor2="0">
+      <item path="OperatorsLink.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="OperatoruUkazatel.h" ex="false" tool="3" flavor2="0">
+      <item path="OperatorsPointers.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>

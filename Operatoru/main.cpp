@@ -21,12 +21,10 @@ using std::cin;
 using std::string;
 
 
-using namespace std;
 
 
 int main(int argc, char** argv) {
     
-   OperatorCPlus Obj;
 
     return 0;
 }
