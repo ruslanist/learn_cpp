@@ -12,6 +12,7 @@
 #ifndef OPERATORSBASE_H
 #define OPERATORSBASE_H
 
+#include<stdexcept>
 #include <iostream>
 
 using std::string;
@@ -44,6 +45,8 @@ public:
     string fieldName1;
     
     string fieldName2;
+    
+    
     
     
 };

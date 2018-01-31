@@ -9,6 +9,8 @@
  * Created on 30 января 2018 г., 20:08
  */
 
+#include "OperatorsLink.h"
+#include "OperatorsPointers.h"
 
 #include <iostream>
 using std::cout;
@@ -18,11 +20,9 @@ using std::endl;
 #include <string>
 using std::string;
 
-#include"OperatorsBase.h"
-#include"OperatorsPointers.h"
-#include"OperatorsLink.h"
+#include "OperatorsBase.h"
 
-OperatorsPointers::OperatorsPointers(const string &aid1, const string&aid2, string &nameAid1, string &nameAid2, int name1, double name2) {
+OperatorsPointers::OperatorsPointers(const string &aid1, const string &aid2, string &nameAid1, string &nameAid2, int name1, double name2) {
 
     OperatorsPointers::operatorAid1(const string &aid1) {
         
@@ -50,12 +50,18 @@ OperatorsPointers::OperatorsPointers(const string &aid1, const string&aid2, stri
     
     OperatorsPointers::workAid(int name1, double name2) {
     
+        
+        OperatorsBase obj;
+        
+        OperatorsPointers  objAid;
+        
+        OperatorsLink allAid;
     }
 
 };
 
 
-OperatorsLink::OperatorsLink(const string &aid1, const string&aid2, string &nameAid1, string &nameAid2, int name2, double name3) {
+OperatorsLink::OperatorsLink(const string &aid1, const string &aid2, string &nameAid1, string &nameAid2, int name2, double name3) {
 
     OperatorsLink::operatoraidName1(const string &aid1, string &nameAid1) {
     
@@ -67,7 +73,7 @@ OperatorsLink::OperatorsLink(const string &aid1, const string&aid2, string &name
         cout << aid2 << nameAid2 << endl;
     }
 
-    OperatorsLink::operatoraidNameAll(const string &aid1, string &nameAid1, const string&aid2, string &nameAid2) {
+    OperatorsLink::operatoraidNameAll(const string &aid1, string &nameAid1, const string &aid2, string &nameAid2) {
     
         cout << aid1 << nameAid1 << aid2 << nameAid2 << endl;
     }

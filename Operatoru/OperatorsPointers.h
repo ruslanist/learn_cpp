@@ -21,9 +21,9 @@ class OperatorsPointers : public OperatorsBase {
     
 public: 
     
-    OperatorsPointers::OperatorsPointers(const string &aid1, const string&aid2, string &nameAid1, string &nameAid2);
+    OperatorsPointers(const string &aid1, const string &aid2, string &nameAid1, string &nameAid2);
     
-};
-
 #endif /* OPERATORSPOINTERS_H */
+    
+ };   
 

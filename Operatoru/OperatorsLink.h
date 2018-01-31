@@ -17,10 +17,12 @@
 
 using namespace std;
 
-class OperatorsLink : public OperatorsBase {
+class OperatorsLink : OperatorsBase {
+    
+    OperatorsLink(const string &aid1, const string &aid2, string &nameAid1, string &nameAid2);
+
+#endif /* OPERATORSLINK_H */
+    
 
 };
     
-
-#endif /* OPERATORSLINK_H */
-
