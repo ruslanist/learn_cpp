@@ -11,6 +11,7 @@
                    displayName="Файлы заголовков"
                    projectFiles="true">
       <itemPath>OperatorsBase.h</itemPath>
+      <itemPath>OperatorsKlass.h</itemPath>
       <itemPath>OperatorsLink.h</itemPath>
       <itemPath>OperatorsPointers.h</itemPath>
     </logicalFolder>
@@ -44,6 +45,8 @@
       </item>
       <item path="OperatorsCpp.cpp" ex="false" tool="1" flavor2="0">
       </item>
+      <item path="OperatorsKlass.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="OperatorsLink.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="OperatorsPointers.h" ex="false" tool="3" flavor2="0">
@@ -74,6 +77,8 @@
       <item path="OperatorsBase.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="OperatorsCpp.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="OperatorsKlass.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="OperatorsLink.h" ex="false" tool="3" flavor2="0">
       </item>

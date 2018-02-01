@@ -12,8 +12,8 @@
 #ifndef OPERATORSBASE_H
 #define OPERATORSBASE_H
 
-#include<stdexcept>
 #include <iostream>
+#include <string>
 
 using std::string;
 
@@ -21,30 +21,45 @@ class OperatorsBase {
     
 public:
         
-        string operatorAid1(const string &aid1);
+        void setoperatorAid1(const string &);
+        string getoperatorAid1();
+               
+        void setoperatorName1(const string &);
+        string getoperatorName1();
         
-        string operatorAid2(const string &aid2);
+        void setoperatordescAid1(const string &);
+        string getoperatordescAid1();
         
-        string operatorName1(string &nameAid1);
+        void setoperatorAid2(const string &);
+        string getoperatorAid2();
+        
+        void setoperatorName2(const string &);
+        string getoperatorName2();
+        
+        void setoperatordescAid2(const string &);
+         string getoperatordescAid2();
+        
+        
+        
+        void operatoraidName(const string &aid1, const string &nameAid1) const;
+        
+        void operatoraidNameAll(const string &aid1, const string &nameAid1, const string &aid2,  const string &nameAid2) const;
+        
+        virtual void workAid(const int &, const double &) = 0;
+        
+private:
     
-        string operatorName2(string &nameAid2);
-    
-        void operatoraidName1(const string &aid1, string &nameAid1) const;
-        
-        void operatoraidName2(const string &aid2, string &nameAid2) const;
-        
-        void operatoraidNameAll(const string &aid1, string &nameAid1, const string &aid2,  string &nameAid2) const;
-        
-        virtual void workAid() = 0;
-        
-  
     string fieldAid1;
+    
+    string fieldName1;
 
     string fieldAid2;
     
-    string fieldName1;
-    
     string fieldName2;
+    
+    string descriptionAid1;
+            
+    string descriptionAid2;      
     
     
     
