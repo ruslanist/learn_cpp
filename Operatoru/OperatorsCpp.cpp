@@ -12,7 +12,8 @@
 #include"OperatorsPointers.h"
 #include"OperatorsLink.h"
 #include"OperatorsBase.h"
-#include "OperatorsKlass.h"
+#include"OperatorsInformation.h"
+
 
 #include <iostream>
 using std::cout;
@@ -80,20 +81,20 @@ OperatorsLink::OperatorsLink() {}
 
 OperatorsLink::OperatorsLink(const string &aid1, const string &nameAid1, const string &aid2,  const string &nameAid2) {
 
-    cout << "Введеные Вами данные: " << endl;
+    //cout << "Введеные Вами данные: " << endl;
     
-    cout << "Индетификатор1: " << &nameAid1 << " " << "OID1 :" << &aid1<< endl;
-    cout << "Индетификатор2: " << &nameAid2 << " " << "OID2 :" << &aid2<< endl;
+    //cout << "Индетификатор1: " << &nameAid1 << " " << "OID1 :" << &aid1<< endl;
+    //cout << "Индетификатор2: " << &nameAid2 << " " << "OID2 :" << &aid2<< endl;
 }
 
 OperatorsLink::OperatorsLink(const string &aid1, const string &nameAid1) {
 
-    cout << "Введеные Вами данные: " << endl;
+   // cout << "Введеные Вами данные: " << endl;
     
-    cout << "Индетификатор1: " << &nameAid1 << " " << "OID1 :" << &aid1<< endl;
+   // cout << "Индетификатор1: " << &nameAid1 << " " << "OID1 :" << &aid1<< endl;
 }
     
-    OperatorsBase::operatoraidNameAll(const string& aid1, const string& nameAid1, const string& aid2, const string& nameAid2) const {
+   void OperatorsBase::operatoraidNameAll(const string& aid1, const string& nameAid1, const string& aid2, const string& nameAid2) const {
     
         cout << "Названия (Идентифекатор): " << aid1 << " -" << "Значение OID: " 
                 << nameAid1 << endl;
@@ -103,14 +104,14 @@ OperatorsLink::OperatorsLink(const string &aid1, const string &nameAid1) {
                 
     }
 
-    OperatorsBase::operatoraidName(const string& aid1, const string& nameAid1) const {
+    void OperatorsBase::operatoraidName(const string& aid1, const string& nameAid1) const {
     
         cout << "Названия (Идентифекатор): " << aid1 << " -" << "Значение OID: " 
                 << nameAid1 << endl;
         
     }
 
-   OperatorsPointers::workAid(const int& parmAid1, const double& parmAid2) {
+   void OperatorsPointers::workAid(const int& parmAid1, const double& parmAid2) {
        
        int *poin1 = 100;
        
@@ -128,7 +129,7 @@ OperatorsLink::OperatorsLink(const string &aid1, const string &nameAid1) {
        cout << "Выражение равно: " << amount = (poin1) * (poin2) << endl;
    }     
 
-   OperatorsLink::workAid(const int& parmAid1, const double& parmAid2) {
+   void OperatorsLink::workAid(const int& parmAid1, const double& parmAid2) {
        
        
        string &link1 = "Значение1 :";
@@ -154,36 +155,43 @@ OperatorsLink::OperatorsLink(const string &aid1, const string &nameAid1) {
        
    }  
    
-   OperatorKlass::aidInform() {
+   OperatorsInformation::OperatorsInformation() {}
    
-       cout << "Hello!!!" << endl;
+   OperatorsInformation::OperatorsInformation(const string &aidInform, const string &mibInform) {
+   
+        setoperatorinfAid(&aidInform);
+        setoperatorinfMib(&mibInform);       
+   }
+   
+        void OperatorsBase::setoperatorinfAid(const string &aidInform) {
+   
+            informAid = aidInform;
+        }
+     
+        string OperatorsBase::getoperatorinfAid() {
+        
+            return informAid;
+        }
+               
+        void OperatorsBase::setoperatorinfMib(const string &mibInform) {
+        
+             informMib = mibInform;
+        }
+        
+        string OperatorsBase::getoperatorinfMib() {
+        
+            return informMib;
+        }
+   
+   
+   
+   void OperatorsInformation::aidInform() {
+   
+       cout << "OID (Object Identifier, идентификатор объекта) — это глобально уникальный номер, идентифицирующий объекты. Глобально-уникальный означает, что во всей вселенной существует единственная организация, отвечающая за определение объекта и его функциональность." << endl;
+       cout << "Management Information Base (MIB, база управляющей информации) - виртуальная база данных, используемая для управления объектами в сети связи. Наиболее часто это понятие связывают с Simple Network Management Protocol (SNMP), но также оно используется в более широком смысле - в контексте модели управления сети OSI/ISO. Хотя термин MIB предназначен для обозначения всей доступной информации об объекте, он также часто используется для обозначения конкретного подмножества, которое правильнее называть MIB-модулем." << endl;
        
    }
    
    
-   // задача: 
-   // При выборе в main.cpp в case9 нужно чтобы клиент ввел два string String
-   // Далее эти параметры через обЪект Класса OperatorKlass, OperatorKlass klasObj;
-   // вызывая Функцию этого Класса  void funk1(OperatorKlass &parmObj);, передать два
-   // введенных string String при помощи объекта OperatorKlass klasObj.
-   // Далее параметры в объекте должны попасть в Класс OperatorsLink и попасть в функцию 
-   // void funkInform(OperatorKlass &parmObj); которая пренадлежит классу OperatorsLink
-   // и ее тело задано в OperatorsCpp и далееведенные параметры  попав параметры 
-   // string String передаются через объект OperatorKlass &parmObj и  поподают в функцию 
-   // void funkInform(OperatorKlass &parmObj); и выводят cout << string инфа1 << string инфа2 << endl
-   // как то так, я знаю вариант проще, но задача поставленая Себе передать параметры  через Объект класса в функцию другого Класса
    
-      
-   /*OperatorKlass::funkInform(OperatorKlass &parmObj) {
    
-       parm2.funk1(string parm1, string parm2) {
-       
-           cout << "Общая Информация об OID" << &parm1 << endl;
-           
-           cout << "Общая Информация об OID" << &parm2 << endl;
-           
-           // В дальнейшем лучше эту Информацию Сохранит в дополнительное  Поле а также вывести потом инфу
-           // При помоши создонных функций setfunk и getfunk 
-       
-       
-   }*/

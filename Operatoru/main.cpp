@@ -15,7 +15,8 @@
 #include "OperatorsBase.h"
 #include "OperatorsPointers.h"
 #include "OperatorsLink.h"
-#include "OperatorsKlass.h"
+#include"OperatorsInformation.h"
+
 
 #include <cstdlib>
 #include <iostream>
@@ -33,7 +34,7 @@ int main(int argc, char** argv) {
     
        OperatorsPointers pointObj;
        OperatorsLink linkObj;    
-       //OperatorKlass klasObj;
+       OperatorsInformation infoObj;
       
       for(; true ;)
       {
@@ -54,8 +55,9 @@ int main(int argc, char** argv) {
     cout << "6) Ввести сохраненный в поля OID1  (цифра 6) " << endl;      
     cout << "7) Ввести сохраненный в поля OID2  (цифра 7) " << endl;
     cout << "8) Вывести все сохраненный в поля OID-ы (цифра 8)" << endl;      
-    cout << "9) Обща терменология по OID и MIB" << endl;
-   
+    cout << "9) Обща терменология по OID и MIB (цифра 9)" << endl;
+    cout << "10) Ввывести введенную и сохранненую в полях информацию об OID и MIB (цифра 10)" << endl;
+    cout << "11) Получить полную информацию   OID и MIB (цифра 11)" << endl;
     
     cin >> menu;
                  
@@ -216,12 +218,38 @@ int main(int argc, char** argv) {
         }
             break; 
          
-        /*case 9:
+        case 9:
         {
-           
+            
+            const string &aidInform;
+            const string &mibInform;
+            
+          cout << "Введи свою информацию об  OID, для пополнения информационной базы" << endl;
+            cin >> &aidInform;
+            
+            cout << "Введи свою информацию об  MIB, для пополнения информационной базы" << endl;
+            cin >> &mibInform; 
+            
+            infoObj.setoperatorinfAid(&aidInform);
+            infoObj.setoperatorinfMib(&mibInform);
+        }
+            break; 
+            
+        case 10:
+        {
+           cout << "Что Вы написали об OID1 :" << infoObj.getoperatorinfAid() << endl; 
+
+            cout << "Что Вы написали об MIB :" << infoObj.getoperatorinfMib() << endl; 
             
         }
-            break; */
+            break;
+            
+        case 11:
+        {
+            infoObj.aidInform();
+            
+        }
+            break;
        
              
     } // Конец цикла Switch

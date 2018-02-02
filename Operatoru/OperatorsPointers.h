@@ -15,6 +15,8 @@
 #include <iostream>
 #include <string>
 
+#include"OperatorsBase.h"
+
 using namespace std;
 
 class OperatorsPointers : public OperatorsBase {
