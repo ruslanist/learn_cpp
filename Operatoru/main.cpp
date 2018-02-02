@@ -15,6 +15,7 @@
 #include "OperatorsBase.h"
 #include "OperatorsPointers.h"
 #include "OperatorsLink.h"
+#include "OperatorsKlass.h"
 
 #include <cstdlib>
 #include <iostream>
@@ -32,7 +33,7 @@ int main(int argc, char** argv) {
     
        OperatorsPointers pointObj;
        OperatorsLink linkObj;    
-       operatorKlass klasObj;
+       //OperatorKlass klasObj;
       
       for(; true ;)
       {
@@ -53,7 +54,7 @@ int main(int argc, char** argv) {
     cout << "6) Ввести сохраненный в поля OID1  (цифра 6) " << endl;      
     cout << "7) Ввести сохраненный в поля OID2  (цифра 7) " << endl;
     cout << "8) Вывести все сохраненный в поля OID-ы (цифра 8)" << endl;      
-    cout << "9) Вывод метода дополнительного Класса" << endl;
+    cout << "9) Обща терменология по OID и MIB" << endl;
    
     
     cin >> menu;
@@ -215,12 +216,12 @@ int main(int argc, char** argv) {
         }
             break; 
          
-        case 9:
+        /*case 9:
         {
            
             
         }
-            break; 
+            break; */
        
              
     } // Конец цикла Switch

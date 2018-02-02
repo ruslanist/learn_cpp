@@ -28,7 +28,7 @@ public:
     void workAid(const int &, const double &);
     
     
-};    const
+};   
 
 
 

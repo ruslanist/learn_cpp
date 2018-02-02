@@ -15,11 +15,15 @@
 #include <iostream>
 #include <string>
 
+#include"OperatorsKlass.h"
+
 using namespace std;
 
 class OperatorsLink : public OperatorsBase {
     
     OperatorsLink();
+    
+    OperatorsLink(OperatorKlass &parm2);
     
     OperatorsLink(const string &aid1, const string &nameAid1);
     
@@ -27,6 +31,8 @@ class OperatorsLink : public OperatorsBase {
     
     
     void workAid(const int &, const double &);
+    
+    //void funkInform(OperatorKlass &parmObj);
 };
 
 #endif /* OPERATORSLINK_H */

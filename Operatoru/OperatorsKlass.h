@@ -14,13 +14,14 @@
 #ifndef OPERATORSKLASS_H
 #define OPERATORSKLASS_H
 
-class operatorKlass : public OperatorsBase {
+class OperatorKlass : public OperatorsBase {
 
-    operatorKlass(operatorKlass);
+    OperatorKlass();
     
-    int funk1();
+    //void funk1(OperatorKlass &parmObj);
 
-
+    //void aidInform();
+    
 
 };
 

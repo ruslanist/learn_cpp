@@ -12,6 +12,8 @@
 #ifndef OPERATORSBASE_H
 #define OPERATORSBASE_H
 
+#include"OperatorsKlass.h"
+
 #include <iostream>
 #include <string>
 
@@ -46,6 +48,8 @@ public:
         void operatoraidNameAll(const string &aid1, const string &nameAid1, const string &aid2,  const string &nameAid2) const;
         
         virtual void workAid(const int &, const double &) = 0;
+        
+        virtual void aidInform() =0;
         
 private:
     

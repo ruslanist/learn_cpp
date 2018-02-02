@@ -154,17 +154,36 @@ OperatorsLink::OperatorsLink(const string &aid1, const string &nameAid1) {
        
    }  
    
-   operatorKlass::operatorKlass() {
+   OperatorKlass::aidInform() {
    
+       cout << "Hello!!!" << endl;
+       
    }
    
-   operatorKlass::funk1() {
    
-       int a = 5;
+   // задача: 
+   // При выборе в main.cpp в case9 нужно чтобы клиент ввел два string String
+   // Далее эти параметры через обЪект Класса OperatorKlass, OperatorKlass klasObj;
+   // вызывая Функцию этого Класса  void funk1(OperatorKlass &parmObj);, передать два
+   // введенных string String при помощи объекта OperatorKlass klasObj.
+   // Далее параметры в объекте должны попасть в Класс OperatorsLink и попасть в функцию 
+   // void funkInform(OperatorKlass &parmObj); которая пренадлежит классу OperatorsLink
+   // и ее тело задано в OperatorsCpp и далееведенные параметры  попав параметры 
+   // string String передаются через объект OperatorKlass &parmObj и  поподают в функцию 
+   // void funkInform(OperatorKlass &parmObj); и выводят cout << string инфа1 << string инфа2 << endl
+   // как то так, я знаю вариант проще, но задача поставленая Себе передать параметры  через Объект класса в функцию другого Класса
+   
+      
+   /*OperatorKlass::funkInform(OperatorKlass &parmObj) {
+   
+       parm2.funk1(string parm1, string parm2) {
        
-       int b = 5;
+           cout << "Общая Информация об OID" << &parm1 << endl;
+           
+           cout << "Общая Информация об OID" << &parm2 << endl;
+           
+           // В дальнейшем лучше эту Информацию Сохранит в дополнительное  Поле а также вывести потом инфу
+           // При помоши создонных функций setfunk и getfunk 
        
-       int c = 0;
        
-       cout << "a + b = " << c = a + b << endl;
-   }
+   }*/
