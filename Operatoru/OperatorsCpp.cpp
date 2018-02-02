@@ -111,45 +111,57 @@ OperatorsLink::OperatorsLink(const string &aid1, const string &nameAid1) {
         
     }
 
-   void OperatorsPointers::workAid(const int& parmAid1, const double& parmAid2) {
+   void OperatorsPointers::workAid(const int& parmAid1, const int& parmAid2) {
        
-       int *poin1 = 100;
+       int sum1 = 100;
        
-       size_t *poin2 = 200;
+       int sum2 = 200;
        
-       int amount = 0;
+       int *poin1 = &sum1;
        
-       double amount2;
+       int *poin2 = &sum2;
        
-      cout << "Сумма введенных Вами данных = " << amount2 = parmAid1 + parmAid2 << endl;
+       int amount = (*poin1) * (*poin2);
        
-       cout <<  << endl;
+       int amount2 = parmAid1 + parmAid2;
+       
+       cout << "Сумма введенных Вами данных = " << amount2  << endl;
+       
+       
        cout << "OID: " << parmAid2 << endl;
        
-       cout << "Выражение равно: " << amount = (poin1) * (poin2) << endl;
+       cout << "Выражение равно: " << amount << endl;
    }     
 
-   void OperatorsLink::workAid(const int& parmAid1, const double& parmAid2) {
+   void OperatorsLink::workAid(const int& parmAid1, const int & parmAid2) {
+       
+      int amount2 = parmAid1 + parmAid2;
+       
+       int sum1 = 4000;
+       
+       int sum2 = 1000;
+       
+      int amount1 = sum1 + sum2;
        
        
-       string &link1 = "Значение1 :";
+       string Word1 = "Значение1 :";
        
-       string &link2 = "Значение2 : ";
-       
-       size_t &link3 = 1000;
-       
-       int sum = 4000;
-       
-       int amount1 = 0;
-       
-       double amount2 = 0;
+       string Word2 = "Значение2 : ";
        
        
-       cout << "Сумма введенных Вами данных = " << amount2 = parmAid1 - parmAid2 << endl;
+       string &Link1 = Word1;
        
-       cout << link1 << link1 << "По адрессу в памяти: " << &link1 << endl;
-       cout << link2 << link2 << "По адрессу в памяти: " << &link2 << endl;
-       cout << "Значение :" << link3 << "По адрессу в памяти: " << &link3 << endl; 
+       string &Link2 = Word2;
+       
+       int &Link3 = sum1;
+       int &Link4 = sum2
+       
+       
+       cout << "Сумма введенных Вами данных = " << amount2 << endl;
+       
+       cout << Word1 << sum1 << "По адрессу в памяти: " << &Link3 << endl;
+       cout << Word2 << sum2 << "По адрессу в памяти: " << &Link4 << endl;
+       
        
        cout << "Итоговая сумма вычисления =" << amount = (link3 + sum) * 2 << endl; 
        

@@ -53,7 +53,7 @@ public:
         void setoperatorinfMib(const string &);
         string getoperatorinfMib();
                
-        virtual void workAid(const int &, const double &) = 0;
+        virtual void workAid(const int &, const int &) = 0;
         
         virtual void aidInform() =0;
         

@@ -69,41 +69,41 @@ int main(int argc, char** argv) {
         
             
                                                                                                     
-            const string &aid1;
-            const string &nameAid1;
-            const string &descAid1;
-            const string &aid2;
-            const string &nameAid2;
-            const string &descAid2;
+             string aid1;
+             string nameAid1;
+             string descAid1;
+             string aid2;
+             string nameAid2;
+            string descAid2;
             
             cout << "Введите  OID и Идентификатор, в следующем порядке: 1-й OID, Идентификатори, описание OID" 
                     << " 2-й OID, Идентификатори, описание OID" << endl;
             
             cout << "Введите первый OID" << endl;
-            cin >> &aid1;
+            cin >> aid1;
             
             cout << "Введите Индефикатор для первого OID" << endl;
-            cin >> &nameAid1;
+            cin >> nameAid1;
             
             cout << "Введите краткое описание к первому OID" << endl;
-            cin >> &descAid1;
+            cin >> descAid1;
             
             cout << "Введите второй OID" << endl;
-            cin >> &aid2;
+            cin >> aid2;
             
             cout << "Введите Индефикатор для второго OID" << endl;
-            cin >> &nameAid2;
+            cin >> nameAid2;
             
             cout << "Введите краткое описание к второму OID" << endl;
-            cin >> &descAid2;
+            cin >> descAid2;
             
             
-            pointObj.setoperatorAid1(&aid1);
-            pointObj.setoperatorName1(&nameAid1);
-            pointObj.setoperatordescAid1(&descAid1);
-            pointObj.setoperatorAid2(&aid2);
-            pointObj.setoperatorName2(&nameAid2);
-            pointObj.setoperatordescAid2(&descAid2);
+            pointObj.setoperatorAid1(aid1);
+            pointObj.setoperatorName1(nameAid1);
+            pointObj.setoperatordescAid1(descAid1);
+            pointObj.setoperatorAid2(aid2);
+            pointObj.setoperatorName2(nameAid2);
+            pointObj.setoperatordescAid2(descAid2);
                 
         }
             break;
@@ -112,17 +112,17 @@ int main(int argc, char** argv) {
         case 2:
         {
             
-            const string &aid1;
-            const string &nameAid1;
+            string aid1;
+            string nameAid1;
            
             
            cout << "Введите  OID" << endl;
-           cin >> &aid1;
+           cin >> aid1;
             
            cout << "Введите Индефикатор для введенного OID" << endl;
-           cin >> &nameAid1;
+           cin >> nameAid1;
            
-           linkObj.operatoraidName(&aid1, &nameAid1);
+           linkObj.operatoraidName(aid1, nameAid1);
             
         }    
             break; 
@@ -131,26 +131,26 @@ int main(int argc, char** argv) {
         case 3:
         {
             
-            const string &aid1;
-            const string &nameAid1;
-            const string &aid2;
-            const string &nameAid2;
+            string aid1;
+            string nameAid1;
+            string aid2;
+            string nameAid2;
             
             cout << "Введите первый OID" << endl;
-            cin >> &aid1;
+            cin >> aid1;
             
             cout << "Введите Индефикатор для первого OID" << endl;
-            cin >> &nameAid1;
+            cin >> nameAid1;
             
            
             
             cout << "Введите второй OID" << endl;
-            cin >> &aid2;
+            cin >> aid2;
             
             cout << "Введите Индефикатор для второго OID" << endl;
-            cin >> &nameAid2;
+            cin >> nameAid2;
             
-            linkObj.operatoraidNameAll(&aid1, &nameAid1, &aid2, &nameAid2);
+            linkObj.operatoraidNameAll(aid1, nameAid1, aid2, nameAid2);
           
         }                           
               break; 
@@ -158,33 +158,33 @@ int main(int argc, char** argv) {
         case 4:
             
         {
-             const int& parmAid1; 
-             const double& parmAid2;
+             int parmAid1; 
+             int parmAid2;
            
             
            cout << "Введите  челое число" << endl;
-           cin >> &parmAid1;
+           cin >> parmAid1;
             
            cout << "Введите Дробное число" << endl;
-           cin >> &parmAid2;
+           cin >> parmAid2;
            
-           pointObj.workAid(parmAid1, &parmAid2);
+           pointObj.workAid(parmAid1, parmAid2);
         }
               break;        
               
         case 5:
         {
-               const int& parmAid1; 
-             const double& parmAid2;
+               int parmAid1; 
+               int parmAid2;
            
             
            cout << "Введите  челое число" << endl;
-           cin >> &parmAid1;
+           cin >> parmAid1;
             
            cout << "Введите Дробное число" << endl;
-           cin >> &parmAid2;
+           cin >> parmAid2;
            
-           linkObj.workAid(parmAid1, &parmAid2);
+           linkObj.workAid(parmAid1, parmAid2);
         }
         
               break;    
@@ -221,17 +221,17 @@ int main(int argc, char** argv) {
         case 9:
         {
             
-            const string &aidInform;
-            const string &mibInform;
+            string aidInform;
+            string mibInform;
             
           cout << "Введи свою информацию об  OID, для пополнения информационной базы" << endl;
-            cin >> &aidInform;
+            cin >> aidInform;
             
             cout << "Введи свою информацию об  MIB, для пополнения информационной базы" << endl;
-            cin >> &mibInform; 
+            cin >> mibInform; 
             
-            infoObj.setoperatorinfAid(&aidInform);
-            infoObj.setoperatorinfMib(&mibInform);
+            infoObj.setoperatorinfAid(aidInform);
+            infoObj.setoperatorinfMib(mibInform);
         }
             break; 
             
