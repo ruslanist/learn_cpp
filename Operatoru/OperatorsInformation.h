@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * A Class interface of the OperatorsInformation
  */
 
 /* 
@@ -14,17 +12,21 @@
 #ifndef OPERATORSINFORMATION_H
 #define OPERATORSINFORMATION_H
 
+#include"OperatorsBase.h"
+
+#include <iostream>
+
+using namespace std;
+
 class OperatorsInformation : public OperatorsBase {
 
+public:
+    
     OperatorsInformation();
-    
-    OperatorsInformation(const string &aidInform, const string &mibInform);
-    
+       
     void aidInform();
-
+    
 };
-
-
 
 #endif /* OPERATORSINFORMATION_H */
 

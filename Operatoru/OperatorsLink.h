@@ -1,5 +1,5 @@
 /*
- * Class interface of
+ * A Class interface of the OperatorsLink
  */
 
 /* 
@@ -13,22 +13,24 @@
 #define OPERATORSLINK_H
 
 #include"OperatorsBase.h"
+
 #include <iostream>
 #include <string>
-
 
 using namespace std;
 
 class OperatorsLink : public OperatorsBase {
     
+public:
+    
     OperatorsLink();
+    
+    OperatorsLink(const string &aid1, const string &nameAid1, const string &aid2,  const string &nameAid2);
     
     OperatorsLink(const string &aid1, const string &nameAid1);
     
-    OperatorsLink(const string &aid1, const string &aid2, const string &nameAid1, const string &nameAid2);
-    
-    void workAid(const int &, const int &);
-    
+      
+    void aidInform();
     
 };
 

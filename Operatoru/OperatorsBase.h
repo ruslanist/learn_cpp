@@ -1,5 +1,5 @@
 /*
- * Base Class Operating System
+ * TheBase Class Operating System
  */
 
 /* 
@@ -17,7 +17,7 @@
 #include <iostream>
 #include <string>
 
-using std::string;
+using namespace std;
 
 class OperatorsBase {
     
@@ -39,22 +39,39 @@ public:
         string getoperatorName2();
         
         void setoperatordescAid2(const string &);
-         string getoperatordescAid2();
-        
-        
-        
-        void operatoraidName(const string &aid1, const string &nameAid1) const;
-        
-        void operatoraidNameAll(const string &aid1, const string &nameAid1, const string &aid2,  const string &nameAid2) const;
-        
+        string getoperatordescAid2();    
+         
         void setoperatorinfAid(const string &);
         string getoperatorinfAid();
                
         void setoperatorinfMib(const string &);
-        string getoperatorinfMib();
-               
-        virtual void workAid(const int &, const int &) = 0;
+        string getoperatorinfMib(); 
         
+        void setswitchName(const string &);
+        string getswitchName();
+        
+        void setswitchIP(const string &);
+        string getswitchIP();
+        
+        void setswitchOS(const string &);
+        string getswitchOS();
+        
+        void setserverName(const string &);
+        string getserverName();
+        
+        void setserverIP(const string &);
+        string getserverIP();
+        
+        void setserverOS(const string &);
+        string getserverOS();
+         
+         
+                
+        void operatoraidName(const string &aid1, const string &nameAid1);
+        
+        void operatoraidNameAll(const string &aid1, const string &nameAid1, const string &aid2,  const string &nameAid2);
+        
+                
         virtual void aidInform() =0;
         
 private:
@@ -75,9 +92,21 @@ private:
     
     string informMib;
     
-    
-    
+    string nameSwitch;
+            
+    string switchIp;
+            
+    string switchOS;
+            
+    string nameServer;
+            
+    string serverIp;
+            
+    string serverOS;
+            
 };
+
+
 
 #endif /* OPERATORSBASE_H */
 

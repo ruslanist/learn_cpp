@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * The file of main.cpp 
  */
 
 /* 
@@ -14,7 +12,7 @@
 
 #include "OperatorsBase.h"
 #include "OperatorsPointers.h"
-#include "OperatorsLink.h"
+#include"OperatorsLink.h"
 #include"OperatorsInformation.h"
 
 
@@ -46,18 +44,19 @@ int main(int argc, char** argv) {
         cout << "Замечание: Для корректной работы программы " 
                 "Заполните прежде в меню, пункты 1 2, 3 " << endl;
        
-    cout << "1) Введите и сохроните введенные 2-а Оида и Идетифекаторы к ним, " 
-            << "В такой последовательности: Оид, Идентифекатор, Оид Идентификатор (цифра 1)" << endl;
+    cout << "1) Введите два OID с Идентификаторы и краткое описания введенного OID" << endl;
+            cout << "Кратко свою информацию об  OID и MIB, а также информацию о сервере и свичемкоторый Вы используете (цифра 1)" << endl;
     cout << "2) Ввести и вывести на экран OID и Идентификатор (цифра 2)" << endl;
-    cout << "3) Ввести и вывести на экран 2-а OID и Идентификаторы, а а также вывести их значения на экран (цифра 3)" << endl;
-    cout << "4) Вывести Целое число и Дробное и получить Сумму этих чисел (цифра 4) " << endl;
-    cout << "5) Ввести целое число и Дробное и получить Разницу этих чисел (цифра 5)" << endl;
-    cout << "6) Ввести сохраненный в поля OID1  (цифра 6) " << endl;      
-    cout << "7) Ввести сохраненный в поля OID2  (цифра 7) " << endl;
+    cout << "3) Ввести и вывести на экран 2(два) OID и Идентификаторы, а а также вывести их значения на экран (цифра 3)" << endl;
+    cout << "4) Вывести Информацию полей хранащию инфу введеную Вами о OID и MIB (цифра 4) " << endl;
+    cout << "5) Вывести введенную Вами информацию об используемом Свиче и Сервере (цифра 5)" << endl;
+    cout << "6) Вывести сохраненный в поля OID1  (цифра 6) " << endl;      
+    cout << "7) Вывести сохраненный в поля OID2  (цифра 7) " << endl;
     cout << "8) Вывести все сохраненный в поля OID-ы (цифра 8)" << endl;      
-    cout << "9) Обща терменология по OID и MIB (цифра 9)" << endl;
-    cout << "10) Ввывести введенную и сохранненую в полях информацию об OID и MIB (цифра 10)" << endl;
-    cout << "11) Получить полную информацию   OID и MIB (цифра 11)" << endl;
+    cout << "9) Вывести общию информацию об протоколе Net-Snmp (цифра 9)" << endl;
+    cout << "10)Вывести различные расчеты используя ссылки и указатели (цифра 10)" << endl;
+    cout << "11)Вывести общию информацию об OID и MIB  (цифра 11)" << endl;
+    cout << "12)Для Выхода из программы выберите этот пункт менб и нажмите 0  (цифра 12)" << endl;
     
     cin >> menu;
                  
@@ -74,7 +73,16 @@ int main(int argc, char** argv) {
              string descAid1;
              string aid2;
              string nameAid2;
-            string descAid2;
+             string descAid2;
+             string infAid;
+             string infMib;
+             string svitchname;
+          
+             string svitchIP;
+             string svitchOS;
+             string servername;
+             string serverIP;
+             string serverOS;
             
             cout << "Введите  OID и Идентификатор, в следующем порядке: 1-й OID, Идентификатори, описание OID" 
                     << " 2-й OID, Идентификатори, описание OID" << endl;
@@ -98,12 +106,58 @@ int main(int argc, char** argv) {
             cin >> descAid2;
             
             
+            
+            cout << "Теперь введите пожалуйста информацию касающиюся " 
+                    << "Терминалогии и полезной информации об OID и MIB, " 
+                      << "а также можете оставить свою информацию для улучшения кода " 
+                        << "так нам это поможет всегда улучшить наше приложение для Вас" << endl;
+            
+            cout << "Введите информацию про OID" << endl;
+            cin >> infAid;
+            
+            cout << "Введите информацию про MIB" << endl;
+            cin >> infMib;
+            
+            
+            
+         cout << "Здесь Вам нужно ввести информацию о Вашем Свиче и Сервере " << endl;   
+            
+            cout << "Введите  модель Вашего Свича" << endl;
+            cin >> svitchname;
+            
+            cout << "Введите IP адрес Вашего Свича" << endl;
+            cin >> svitchIP;
+            
+            cout << "Введите версию ПО Вашего Свича" << endl;
+            cin >> svitchOS;
+            
+            cout << "Введите  модель Вашего Сервера" << endl;
+            cin >> servername;
+            
+            cout << "Введите IP адрес Вашего Сервера" << endl;
+            cin >> serverIP;
+            
+            cout << "Введите версию ПО Вашего Сервера" << endl;
+            cin >> serverOS;
+            
+            
+            
             pointObj.setoperatorAid1(aid1);
             pointObj.setoperatorName1(nameAid1);
             pointObj.setoperatordescAid1(descAid1);
             pointObj.setoperatorAid2(aid2);
             pointObj.setoperatorName2(nameAid2);
             pointObj.setoperatordescAid2(descAid2);
+            
+            pointObj.setoperatorinfAid(infAid);
+            pointObj.setoperatorinfMib(infMib);
+            
+            pointObj.setswitchName(svitchname);
+            pointObj.setswitchIP(svitchIP);
+            pointObj.setswitchOS(svitchOS);
+            pointObj.setserverName(servername);
+            pointObj.setserverIP(serverIP);
+            pointObj.setserverOS(serverOS);
                 
         }
             break;
@@ -158,33 +212,26 @@ int main(int argc, char** argv) {
         case 4:
             
         {
-             int parmAid1; 
-             int parmAid2;
-           
+            cout << "Термины и Ваше дополнение об OID: "<< pointObj.getoperatorinfAid() << endl;
             
-           cout << "Введите  челое число" << endl;
-           cin >> parmAid1;
-            
-           cout << "Введите Дробное число" << endl;
-           cin >> parmAid2;
-           
-           pointObj.workAid(parmAid1, parmAid2);
+            cout << "Термины и Ваше дополнение об MIB: " << pointObj.getoperatorinfMib() << endl;
         }
               break;        
               
         case 5:
         {
-               int parmAid1; 
-               int parmAid2;
-           
+            cout << "Используемый Вами Свич:" << endl;
             
-           cout << "Введите  челое число" << endl;
-           cin >> parmAid1;
+            cout << " Модель Свича: " << pointObj.getswitchName() << endl;
+                cout << "IP адрес Свича: " << pointObj.getswitchIP() << endl;
+                    cout << "Свича: " << pointObj.getswitchOS() << endl;
+                    
+            cout << "Используемый Вами Сервер:" << endl;
             
-           cout << "Введите Дробное число" << endl;
-           cin >> parmAid2;
-           
-           linkObj.workAid(parmAid1, parmAid2);
+            cout << " Модель Сервера: " << pointObj.getserverName() << endl;
+                cout << "IP адрес Сервера: " << pointObj.getserverIP() << endl;
+                    cout << "Сервера: " << pointObj.getserverOS() << endl;
+            
         }
         
               break;    
@@ -220,26 +267,14 @@ int main(int argc, char** argv) {
          
         case 9:
         {
-            
-            string aidInform;
-            string mibInform;
-            
-          cout << "Введи свою информацию об  OID, для пополнения информационной базы" << endl;
-            cin >> aidInform;
-            
-            cout << "Введи свою информацию об  MIB, для пополнения информационной базы" << endl;
-            cin >> mibInform; 
-            
-            infoObj.setoperatorinfAid(aidInform);
-            infoObj.setoperatorinfMib(mibInform);
+            pointObj.aidInform();
+               
         }
             break; 
             
         case 10:
         {
-           cout << "Что Вы написали об OID1 :" << infoObj.getoperatorinfAid() << endl; 
-
-            cout << "Что Вы написали об MIB :" << infoObj.getoperatorinfMib() << endl; 
+           linkObj.aidInform();
             
         }
             break;
@@ -250,7 +285,14 @@ int main(int argc, char** argv) {
             
         }
             break;
-       
+            
+        case 12:
+       {
+           int a = 0;
+           cin >> a;
+            
+        }
+            break;
              
     } // Конец цикла Switch
     

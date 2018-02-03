@@ -1,5 +1,5 @@
 /*
- * Class interface of
+ * A Class interface of the OperatorsPointers
  */
 
 /* 
@@ -12,12 +12,16 @@
 #ifndef OPERATORSPOINTERS_H
 #define OPERATORSPOINTERS_H
 
+#include"OperatorsBase.h"
+
 #include <iostream>
 #include <string>
 
-#include"OperatorsBase.h"
-
 using namespace std;
+
+
+
+
 
 class OperatorsPointers : public OperatorsBase {
     
@@ -25,10 +29,10 @@ public:
     
     OperatorsPointers();
     
-    OperatorsPointers(const string &aid1, const string &nameAid1, const string descAid1, const string &aid2,  const string &nameAid2, const string descAid2);
-   
-    void workAid(const int &, const int &);
-    
+    OperatorsPointers(const string &aid1, const string &nameAid1, const string descAid1, const string &aid2,  const string &nameAid2, const string descAid2, const string &infAid, const string &infMib, 
+                      const string &svitchname, const string &svitchIP, const string &svitchOS, const string &servername, const string &serverIP, const string &serveroS);
+      
+    void aidInform();
     
 };   
 
@@ -38,4 +42,3 @@ public:
 #endif /* OPERATORSPOINTERS_H */
     
    
-
