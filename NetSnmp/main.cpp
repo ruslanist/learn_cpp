@@ -32,7 +32,7 @@ int main(int argc, char** argv) {
    
         cout << "Определение вендора/модели/Имя устройства: " << netSnmp.getString("1.3.6.1.2.1.1.1.0") << endl;
         
-        cout << "Число юзеров активных всего (SessionTotal): " << netSnmp.getString("3.6.1.2.1.1.9.1.3.1") << endl;
+        cout << "Число юзеров активных всего (SessionTotal): " << netSnmp.getString("1.3.6.1.2.1.1.4.0") << endl;
         
    } // Конец Блока try
    

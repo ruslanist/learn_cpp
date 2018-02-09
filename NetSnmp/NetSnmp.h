@@ -32,8 +32,7 @@ class NetSnmp {
                 long getInt(const string& aid) const;
 
                 std::unique_ptr<netsnmp_pdu, NetSnmpDeletPdu> send(const string &aid) const;
-                
-   
+                  
 
         private:
             std::unique_ptr<netsnmp_session, NetSnmpDelet> ss;

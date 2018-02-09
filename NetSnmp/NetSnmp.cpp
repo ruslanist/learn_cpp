@@ -16,6 +16,7 @@
 #include<memory>
 #include"SnmpError.h"
 
+
 using std::string;
 using std::cout;
 using std::endl;
@@ -46,11 +47,16 @@ using std::endl;
         //По мотивам
         //http://www.net-snmp.org/tutorial/tutorial-5/toolkit/demoapp/index.html
         auto result = send(aid);
-
-        for(variable_list * vars = result->variables; vars; vars = vars->next_variable) {
-          if (vars->type == ASN_INTEGER)
-              return *vars->val.integer;
-        }
+        
+      
+        
+        
+        if (result && result->variables && result->variables->type == ASN_INTEGER) { // Проверка Условия
+            
+              
+              return *result->variables->val.integer;
+                    
+            }
        
         throw SnmpError("fail to getInt");
     }
@@ -58,17 +64,15 @@ using std::endl;
     string NetSnmp::getString(const string& aid) const {
         auto result = send(aid);
         
-        for(variable_list * vars = result->variables; vars; vars = vars->next_variable) {
-            if (vars->type == ASN_OCTET_STR) { // Проверка Условия
+            if (result && result->variables && result->variables->type == ASN_OCTET_STR) { // Проверка Условия
                     
-              return string(vars->val.string, vars->val_len); 
+              return string((const char*)result->variables->val.string, result->variables->val_len);
                     
             }
-        }
         
     }
            
-    std::unique_ptr<netsnmp_pdu, NetSnmpDeletPdu> NetSnmp::send(const string &aid) const {
+    std::unique_ptr<snmp_pdu, NetSnmpDeletPdu> NetSnmp::send(const string &aid) const {
         //Похоже что мы не должны это освобождать
         netsnmp_pdu * pdu = snmp_pdu_create(SNMP_MSG_GET);
        
