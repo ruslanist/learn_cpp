@@ -1,0 +1,7 @@
+called: g++
+	/home/ruslan/github/learn_cpp/AString
+	g++
+	-std=c++11
+	main.cpp
+	AString.cpp
+

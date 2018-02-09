@@ -1,0 +1,344 @@
+g++ -std=c++11 main.cpp AString.cpp  
+AString.cpp:35:1: error: ‘ASAString’ does not name a type
+ ASAString::operator=(const AString& other) {
+ ^
+AString.cpp: In member function ‘AString& AString::append(const char*)’:
+AString.cpp:86:37: error: cannot convert ‘std::unique_ptr<char []>’ to ‘void*’ for argument ‘1’ to ‘void* memcpy(void*, const void*, size_t)’
+    memcpy(p, internBuf.get(), bufLen);
+                                     ^
+AString.cpp:87:12: error: no match for ‘operator+’ (operand types are ‘std::unique_ptr<char []>’ and ‘size_t {aka long unsigned int}’)
+    memcpy(p+bufLen, input, inputLen);
+            ^
+AString.cpp:87:12: note: candidate: operator+(int, size_t {aka long unsigned int}) <built-in>
+AString.cpp:87:12: note:   no known conversion for argument 1 from ‘std::unique_ptr<char []>’ to ‘int’
+In file included from /usr/include/c++/5/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/5/bits/char_traits.h:39,
+                 from /usr/include/c++/5/string:40,
+                 from /usr/include/c++/5/stdexcept:39,
+                 from AString.cpp:13:
+/usr/include/c++/5/bits/stl_iterator.h:334:5: note: candidate: template<class _Iterator> std::reverse_iterator<_Iterator> std::operator+(typename std::reverse_iterator<_Iterator>::difference_type, const std::reverse_iterator<_Iterator>&)
+     operator+(typename reverse_iterator<_Iterator>::difference_type __n,
+     ^
+/usr/include/c++/5/bits/stl_iterator.h:334:5: note:   template argument deduction/substitution failed:
+AString.cpp:87:13: note:   mismatched types ‘const std::reverse_iterator<_Iterator>’ and ‘size_t {aka long unsigned int}’
+    memcpy(p+bufLen, input, inputLen);
+             ^
+In file included from /usr/include/c++/5/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/5/bits/char_traits.h:39,
+                 from /usr/include/c++/5/string:40,
+                 from /usr/include/c++/5/stdexcept:39,
+                 from AString.cpp:13:
+/usr/include/c++/5/bits/stl_iterator.h:1152:5: note: candidate: template<class _Iterator> std::move_iterator<_Iterator> std::operator+(typename std::move_iterator<_Iterator>::difference_type, const std::move_iterator<_Iterator>&)
+     operator+(typename move_iterator<_Iterator>::difference_type __n,
+     ^
+/usr/include/c++/5/bits/stl_iterator.h:1152:5: note:   template argument deduction/substitution failed:
+AString.cpp:87:13: note:   mismatched types ‘const std::move_iterator<_Iterator>’ and ‘size_t {aka long unsigned int}’
+    memcpy(p+bufLen, input, inputLen);
+             ^
+In file included from /usr/include/c++/5/string:52:0,
+                 from /usr/include/c++/5/stdexcept:39,
+                 from AString.cpp:13:
+/usr/include/c++/5/bits/basic_string.h:4783:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)
+     operator+(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^
+/usr/include/c++/5/bits/basic_string.h:4783:5: note:   template argument deduction/substitution failed:
+AString.cpp:87:13: note:   ‘std::unique_ptr<char []>’ is not derived from ‘const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’
+    memcpy(p+bufLen, input, inputLen);
+             ^
+In file included from /usr/include/c++/5/string:53:0,
+                 from /usr/include/c++/5/stdexcept:39,
+                 from AString.cpp:13:
+/usr/include/c++/5/bits/basic_string.tcc:1151:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(const _CharT*, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)
+     operator+(const _CharT* __lhs,
+     ^
+/usr/include/c++/5/bits/basic_string.tcc:1151:5: note:   template argument deduction/substitution failed:
+AString.cpp:87:13: note:   mismatched types ‘const _CharT*’ and ‘std::unique_ptr<char []>’
+    memcpy(p+bufLen, input, inputLen);
+             ^
+In file included from /usr/include/c++/5/string:53:0,
+                 from /usr/include/c++/5/stdexcept:39,
+                 from AString.cpp:13:
+/usr/include/c++/5/bits/basic_string.tcc:1167:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(_CharT, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)
+     operator+(_CharT __lhs, const basic_string<_CharT, _Traits, _Alloc>& __rhs)
+     ^
+/usr/include/c++/5/bits/basic_string.tcc:1167:5: note:   template argument deduction/substitution failed:
+AString.cpp:87:13: note:   mismatched types ‘const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’ and ‘size_t {aka long unsigned int}’
+    memcpy(p+bufLen, input, inputLen);
+             ^
+In file included from /usr/include/c++/5/string:52:0,
+                 from /usr/include/c++/5/stdexcept:39,
+                 from AString.cpp:13:
+/usr/include/c++/5/bits/basic_string.h:4820:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&, const _CharT*)
+     operator+(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^
+/usr/include/c++/5/bits/basic_string.h:4820:5: note:   template argument deduction/substitution failed:
+AString.cpp:87:13: note:   ‘std::unique_ptr<char []>’ is not derived from ‘const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’
+    memcpy(p+bufLen, input, inputLen);
+             ^
+In file included from /usr/include/c++/5/string:52:0,
+                 from /usr/include/c++/5/stdexcept:39,
+                 from AString.cpp:13:
+/usr/include/c++/5/bits/basic_string.h:4836:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&, _CharT)
+     operator+(const basic_string<_CharT, _Traits, _Alloc>& __lhs, _CharT __rhs)
+     ^
+/usr/include/c++/5/bits/basic_string.h:4836:5: note:   template argument deduction/substitution failed:
+AString.cpp:87:13: note:   ‘std::unique_ptr<char []>’ is not derived from ‘const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’
+    memcpy(p+bufLen, input, inputLen);
+             ^
+In file included from /usr/include/c++/5/string:52:0,
+                 from /usr/include/c++/5/stdexcept:39,
+                 from AString.cpp:13:
+/usr/include/c++/5/bits/basic_string.h:4848:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&&, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)
+     operator+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
+     ^
+/usr/include/c++/5/bits/basic_string.h:4848:5: note:   template argument deduction/substitution failed:
+AString.cpp:87:13: note:   ‘std::unique_ptr<char []>’ is not derived from ‘std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’
+    memcpy(p+bufLen, input, inputLen);
+             ^
+In file included from /usr/include/c++/5/string:52:0,
+                 from /usr/include/c++/5/stdexcept:39,
+                 from AString.cpp:13:
+/usr/include/c++/5/bits/basic_string.h:4854:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&, std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&&)
+     operator+(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^
+/usr/include/c++/5/bits/basic_string.h:4854:5: note:   template argument deduction/substitution failed:
+AString.cpp:87:13: note:   ‘std::unique_ptr<char []>’ is not derived from ‘const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’
+    memcpy(p+bufLen, input, inputLen);
+             ^
+In file included from /usr/include/c++/5/string:52:0,
+                 from /usr/include/c++/5/stdexcept:39,
+                 from AString.cpp:13:
+/usr/include/c++/5/bits/basic_string.h:4860:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&&, std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&&)
+     operator+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
+     ^
+/usr/include/c++/5/bits/basic_string.h:4860:5: note:   template argument deduction/substitution failed:
+AString.cpp:87:13: note:   ‘std::unique_ptr<char []>’ is not derived from ‘std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’
+    memcpy(p+bufLen, input, inputLen);
+             ^
+In file included from /usr/include/c++/5/string:52:0,
+                 from /usr/include/c++/5/stdexcept:39,
+                 from AString.cpp:13:
+/usr/include/c++/5/bits/basic_string.h:4872:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(const _CharT*, std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&&)
+     operator+(const _CharT* __lhs,
+     ^
+/usr/include/c++/5/bits/basic_string.h:4872:5: note:   template argument deduction/substitution failed:
+AString.cpp:87:13: note:   mismatched types ‘const _CharT*’ and ‘std::unique_ptr<char []>’
+    memcpy(p+bufLen, input, inputLen);
+             ^
+In file included from /usr/include/c++/5/string:52:0,
+                 from /usr/include/c++/5/stdexcept:39,
+                 from AString.cpp:13:
+/usr/include/c++/5/bits/basic_string.h:4878:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(_CharT, std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&&)
+     operator+(_CharT __lhs,
+     ^
+/usr/include/c++/5/bits/basic_string.h:4878:5: note:   template argument deduction/substitution failed:
+AString.cpp:87:13: note:   mismatched types ‘std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’ and ‘size_t {aka long unsigned int}’
+    memcpy(p+bufLen, input, inputLen);
+             ^
+In file included from /usr/include/c++/5/string:52:0,
+                 from /usr/include/c++/5/stdexcept:39,
+                 from AString.cpp:13:
+/usr/include/c++/5/bits/basic_string.h:4884:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&&, const _CharT*)
+     operator+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
+     ^
+/usr/include/c++/5/bits/basic_string.h:4884:5: note:   template argument deduction/substitution failed:
+AString.cpp:87:13: note:   ‘std::unique_ptr<char []>’ is not derived from ‘std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’
+    memcpy(p+bufLen, input, inputLen);
+             ^
+In file included from /usr/include/c++/5/string:52:0,
+                 from /usr/include/c++/5/stdexcept:39,
+                 from AString.cpp:13:
+/usr/include/c++/5/bits/basic_string.h:4890:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&&, _CharT)
+     operator+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
+     ^
+/usr/include/c++/5/bits/basic_string.h:4890:5: note:   template argument deduction/substitution failed:
+AString.cpp:87:13: note:   ‘std::unique_ptr<char []>’ is not derived from ‘std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’
+    memcpy(p+bufLen, input, inputLen);
+             ^
+AString.cpp:89:21: error: no matching function for call to ‘std::unique_ptr<char []>::reset(std::unique_ptr<char []>&)’
+    internBuf.reset(p); 
+                     ^
+In file included from /usr/include/c++/5/memory:81:0,
+                 from AString.cpp:16:
+/usr/include/c++/5/bits/unique_ptr.h:576:7: note: candidate: void std::unique_ptr<_Tp [], _Dp>::reset(std::unique_ptr<_Tp [], _Dp>::pointer) [with _Tp = char; _Dp = std::default_delete<char []>; std::unique_ptr<_Tp [], _Dp>::pointer = char*]
+       reset(pointer __p = pointer()) noexcept
+       ^
+/usr/include/c++/5/bits/unique_ptr.h:576:7: note:   no known conversion for argument 1 from ‘std::unique_ptr<char []>’ to ‘std::unique_ptr<char []>::pointer {aka char*}’
+/usr/include/c++/5/bits/unique_ptr.h:587:7: note: candidate: template<class _Up, class> void std::unique_ptr<_Tp [], _Dp>::reset(_Up*) [with _Up = _Up; <template-parameter-2-2> = <template-parameter-1-2>; _Tp = char; _Dp = std::default_delete<char []>] <deleted>
+  void reset(_Up*) = delete;
+       ^
+/usr/include/c++/5/bits/unique_ptr.h:587:7: note:   template argument deduction/substitution failed:
+AString.cpp:89:21: note:   mismatched types ‘_Up*’ and ‘std::unique_ptr<char []>’
+    internBuf.reset(p); 
+                     ^
+AString.cpp: In member function ‘AString& AString::prepend(const char*)’:
+AString.cpp:100:33: error: cannot convert ‘std::unique_ptr<char []>’ to ‘void*’ for argument ‘1’ to ‘void* memcpy(void*, const void*, size_t)’
+     memcpy(p2, input, inputLen_2);
+                                 ^
+AString.cpp:101:14: error: no match for ‘operator+’ (operand types are ‘std::unique_ptr<char []>’ and ‘size_t {aka long unsigned int}’)
+     memcpy(p2+inputLen_2, internBuf.get(), bufLen);
+              ^
+AString.cpp:101:14: note: candidate: operator+(int, size_t {aka long unsigned int}) <built-in>
+AString.cpp:101:14: note:   no known conversion for argument 1 from ‘std::unique_ptr<char []>’ to ‘int’
+In file included from /usr/include/c++/5/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/5/bits/char_traits.h:39,
+                 from /usr/include/c++/5/string:40,
+                 from /usr/include/c++/5/stdexcept:39,
+                 from AString.cpp:13:
+/usr/include/c++/5/bits/stl_iterator.h:334:5: note: candidate: template<class _Iterator> std::reverse_iterator<_Iterator> std::operator+(typename std::reverse_iterator<_Iterator>::difference_type, const std::reverse_iterator<_Iterator>&)
+     operator+(typename reverse_iterator<_Iterator>::difference_type __n,
+     ^
+/usr/include/c++/5/bits/stl_iterator.h:334:5: note:   template argument deduction/substitution failed:
+AString.cpp:101:15: note:   mismatched types ‘const std::reverse_iterator<_Iterator>’ and ‘size_t {aka long unsigned int}’
+     memcpy(p2+inputLen_2, internBuf.get(), bufLen);
+               ^
+In file included from /usr/include/c++/5/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/5/bits/char_traits.h:39,
+                 from /usr/include/c++/5/string:40,
+                 from /usr/include/c++/5/stdexcept:39,
+                 from AString.cpp:13:
+/usr/include/c++/5/bits/stl_iterator.h:1152:5: note: candidate: template<class _Iterator> std::move_iterator<_Iterator> std::operator+(typename std::move_iterator<_Iterator>::difference_type, const std::move_iterator<_Iterator>&)
+     operator+(typename move_iterator<_Iterator>::difference_type __n,
+     ^
+/usr/include/c++/5/bits/stl_iterator.h:1152:5: note:   template argument deduction/substitution failed:
+AString.cpp:101:15: note:   mismatched types ‘const std::move_iterator<_Iterator>’ and ‘size_t {aka long unsigned int}’
+     memcpy(p2+inputLen_2, internBuf.get(), bufLen);
+               ^
+In file included from /usr/include/c++/5/string:52:0,
+                 from /usr/include/c++/5/stdexcept:39,
+                 from AString.cpp:13:
+/usr/include/c++/5/bits/basic_string.h:4783:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)
+     operator+(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^
+/usr/include/c++/5/bits/basic_string.h:4783:5: note:   template argument deduction/substitution failed:
+AString.cpp:101:15: note:   ‘std::unique_ptr<char []>’ is not derived from ‘const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’
+     memcpy(p2+inputLen_2, internBuf.get(), bufLen);
+               ^
+In file included from /usr/include/c++/5/string:53:0,
+                 from /usr/include/c++/5/stdexcept:39,
+                 from AString.cpp:13:
+/usr/include/c++/5/bits/basic_string.tcc:1151:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(const _CharT*, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)
+     operator+(const _CharT* __lhs,
+     ^
+/usr/include/c++/5/bits/basic_string.tcc:1151:5: note:   template argument deduction/substitution failed:
+AString.cpp:101:15: note:   mismatched types ‘const _CharT*’ and ‘std::unique_ptr<char []>’
+     memcpy(p2+inputLen_2, internBuf.get(), bufLen);
+               ^
+In file included from /usr/include/c++/5/string:53:0,
+                 from /usr/include/c++/5/stdexcept:39,
+                 from AString.cpp:13:
+/usr/include/c++/5/bits/basic_string.tcc:1167:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(_CharT, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)
+     operator+(_CharT __lhs, const basic_string<_CharT, _Traits, _Alloc>& __rhs)
+     ^
+/usr/include/c++/5/bits/basic_string.tcc:1167:5: note:   template argument deduction/substitution failed:
+AString.cpp:101:15: note:   mismatched types ‘const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’ and ‘size_t {aka long unsigned int}’
+     memcpy(p2+inputLen_2, internBuf.get(), bufLen);
+               ^
+In file included from /usr/include/c++/5/string:52:0,
+                 from /usr/include/c++/5/stdexcept:39,
+                 from AString.cpp:13:
+/usr/include/c++/5/bits/basic_string.h:4820:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&, const _CharT*)
+     operator+(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^
+/usr/include/c++/5/bits/basic_string.h:4820:5: note:   template argument deduction/substitution failed:
+AString.cpp:101:15: note:   ‘std::unique_ptr<char []>’ is not derived from ‘const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’
+     memcpy(p2+inputLen_2, internBuf.get(), bufLen);
+               ^
+In file included from /usr/include/c++/5/string:52:0,
+                 from /usr/include/c++/5/stdexcept:39,
+                 from AString.cpp:13:
+/usr/include/c++/5/bits/basic_string.h:4836:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&, _CharT)
+     operator+(const basic_string<_CharT, _Traits, _Alloc>& __lhs, _CharT __rhs)
+     ^
+/usr/include/c++/5/bits/basic_string.h:4836:5: note:   template argument deduction/substitution failed:
+AString.cpp:101:15: note:   ‘std::unique_ptr<char []>’ is not derived from ‘const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’
+     memcpy(p2+inputLen_2, internBuf.get(), bufLen);
+               ^
+In file included from /usr/include/c++/5/string:52:0,
+                 from /usr/include/c++/5/stdexcept:39,
+                 from AString.cpp:13:
+/usr/include/c++/5/bits/basic_string.h:4848:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&&, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)
+     operator+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
+     ^
+/usr/include/c++/5/bits/basic_string.h:4848:5: note:   template argument deduction/substitution failed:
+AString.cpp:101:15: note:   ‘std::unique_ptr<char []>’ is not derived from ‘std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’
+     memcpy(p2+inputLen_2, internBuf.get(), bufLen);
+               ^
+In file included from /usr/include/c++/5/string:52:0,
+                 from /usr/include/c++/5/stdexcept:39,
+                 from AString.cpp:13:
+/usr/include/c++/5/bits/basic_string.h:4854:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&, std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&&)
+     operator+(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^
+/usr/include/c++/5/bits/basic_string.h:4854:5: note:   template argument deduction/substitution failed:
+AString.cpp:101:15: note:   ‘std::unique_ptr<char []>’ is not derived from ‘const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’
+     memcpy(p2+inputLen_2, internBuf.get(), bufLen);
+               ^
+In file included from /usr/include/c++/5/string:52:0,
+                 from /usr/include/c++/5/stdexcept:39,
+                 from AString.cpp:13:
+/usr/include/c++/5/bits/basic_string.h:4860:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&&, std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&&)
+     operator+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
+     ^
+/usr/include/c++/5/bits/basic_string.h:4860:5: note:   template argument deduction/substitution failed:
+AString.cpp:101:15: note:   ‘std::unique_ptr<char []>’ is not derived from ‘std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’
+     memcpy(p2+inputLen_2, internBuf.get(), bufLen);
+               ^
+In file included from /usr/include/c++/5/string:52:0,
+                 from /usr/include/c++/5/stdexcept:39,
+                 from AString.cpp:13:
+/usr/include/c++/5/bits/basic_string.h:4872:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(const _CharT*, std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&&)
+     operator+(const _CharT* __lhs,
+     ^
+/usr/include/c++/5/bits/basic_string.h:4872:5: note:   template argument deduction/substitution failed:
+AString.cpp:101:15: note:   mismatched types ‘const _CharT*’ and ‘std::unique_ptr<char []>’
+     memcpy(p2+inputLen_2, internBuf.get(), bufLen);
+               ^
+In file included from /usr/include/c++/5/string:52:0,
+                 from /usr/include/c++/5/stdexcept:39,
+                 from AString.cpp:13:
+/usr/include/c++/5/bits/basic_string.h:4878:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(_CharT, std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&&)
+     operator+(_CharT __lhs,
+     ^
+/usr/include/c++/5/bits/basic_string.h:4878:5: note:   template argument deduction/substitution failed:
+AString.cpp:101:15: note:   mismatched types ‘std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’ and ‘size_t {aka long unsigned int}’
+     memcpy(p2+inputLen_2, internBuf.get(), bufLen);
+               ^
+In file included from /usr/include/c++/5/string:52:0,
+                 from /usr/include/c++/5/stdexcept:39,
+                 from AString.cpp:13:
+/usr/include/c++/5/bits/basic_string.h:4884:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&&, const _CharT*)
+     operator+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
+     ^
+/usr/include/c++/5/bits/basic_string.h:4884:5: note:   template argument deduction/substitution failed:
+AString.cpp:101:15: note:   ‘std::unique_ptr<char []>’ is not derived from ‘std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’
+     memcpy(p2+inputLen_2, internBuf.get(), bufLen);
+               ^
+In file included from /usr/include/c++/5/string:52:0,
+                 from /usr/include/c++/5/stdexcept:39,
+                 from AString.cpp:13:
+/usr/include/c++/5/bits/basic_string.h:4890:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Alloc> std::operator+(std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&&, _CharT)
+     operator+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
+     ^
+/usr/include/c++/5/bits/basic_string.h:4890:5: note:   template argument deduction/substitution failed:
+AString.cpp:101:15: note:   ‘std::unique_ptr<char []>’ is not derived from ‘std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’
+     memcpy(p2+inputLen_2, internBuf.get(), bufLen);
+               ^
+AString.cpp:103:23: error: no matching function for call to ‘std::unique_ptr<char []>::reset(std::unique_ptr<char []>&)’
+     internBuf.reset(p2);
+                       ^
+In file included from /usr/include/c++/5/memory:81:0,
+                 from AString.cpp:16:
+/usr/include/c++/5/bits/unique_ptr.h:576:7: note: candidate: void std::unique_ptr<_Tp [], _Dp>::reset(std::unique_ptr<_Tp [], _Dp>::pointer) [with _Tp = char; _Dp = std::default_delete<char []>; std::unique_ptr<_Tp [], _Dp>::pointer = char*]
+       reset(pointer __p = pointer()) noexcept
+       ^
+/usr/include/c++/5/bits/unique_ptr.h:576:7: note:   no known conversion for argument 1 from ‘std::unique_ptr<char []>’ to ‘std::unique_ptr<char []>::pointer {aka char*}’
+/usr/include/c++/5/bits/unique_ptr.h:587:7: note: candidate: template<class _Up, class> void std::unique_ptr<_Tp [], _Dp>::reset(_Up*) [with _Up = _Up; <template-parameter-2-2> = <template-parameter-1-2>; _Tp = char; _Dp = std::default_delete<char []>] <deleted>
+  void reset(_Up*) = delete;
+       ^
+/usr/include/c++/5/bits/unique_ptr.h:587:7: note:   template argument deduction/substitution failed:
+AString.cpp:103:23: note:   mismatched types ‘_Up*’ and ‘std::unique_ptr<char []>’
+     internBuf.reset(p2);
+                       ^
+Makefile:2: ошибка выполнения рецепта для цели «all»
+make: *** [all] Ошибка 1
