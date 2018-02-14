@@ -47,7 +47,7 @@ class UnknownMan : public Human {
 
 int main() {
 	vector<Human *> human; //создали вектор с именем human, его тип vector<Human *> - т.е. он несет внутри себя элементы - указатели на Human.
-	human.resize(5); //Выделили место в векторе под 5 элементов.
+	
 
 	Alis alis;
 	Bob bob;
@@ -58,6 +58,6 @@ int main() {
 	human.push_back(&unk);	
 
 	for(int i = 0; i < human.size(); i++) {
-		cout << "Имя: " << human[i] << endl;
+		cout << "Имя: " << human[i]->getName() << endl;
 	}
 }
