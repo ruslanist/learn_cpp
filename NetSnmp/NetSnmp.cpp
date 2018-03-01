@@ -96,9 +96,9 @@ using std::endl;
     
     
     void NetSnmpDeletPdu::operator () (netsnmp_pdu* pdu) {
-        snmp_free_pdu(pdu);
+        //snmp_free_pdu(pdu);
     }
     
     void NetSnmpDelet::operator ()(netsnmp_session* ses) {
-        snmp_close(ses);
+        //snmp_close(ses);
     }
