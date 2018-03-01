@@ -6,11 +6,24 @@
 
 using namespace std;
 
-TEST(CreateNetSnmpTest, BadCommunity) {
+TEST(CreateNetSnmpTest, BadAidGetInt) {
 
-ASSERT_THROW(NetSnmp("127.0.0.1", "illegal_community"), SnmpError);
+NetSnmp netSnmp("127.0.0.1", "illegal_community");
+
+ASSERT_THROW(netSnmp.getInt("1.4.3.6.5.4.8.65"), SnmpError);
 
 }
+
+
+TEST(CreateNetSnmpTest, BadAidGetString) {
+
+NetSnmp netSnmp("127.0.0.1", "illegal_community");
+
+ASSERT_THROW(netSnmp.getString("1.4.3.6.5.4.8.67"), SnmpError);
+
+}
+
+
 
 int main(int argc, char** argv) {
     testing::InitGoogleTest(&argc, argv);

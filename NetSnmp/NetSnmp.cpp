@@ -38,9 +38,6 @@ using std::endl;
         
         ss.reset(snmp_open(&session));
 
-        if(!ss.get()) {
-                throw SnmpError("fail to open snmp_session");
-        }
     }
 
     long NetSnmp::getInt(const string& aid) const {
