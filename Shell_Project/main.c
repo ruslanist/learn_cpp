@@ -3,9 +3,7 @@
 int main(int argc, char * argv[]) {
     
 #ifdef NEED_LOG
-
-    fprintf();
-    
+    fprintf(stdout, "LOG_ENABLED\n");  
 #endif
 
 

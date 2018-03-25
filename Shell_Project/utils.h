@@ -10,16 +10,11 @@
 #ifndef UTILS_H
 #define UTILS_H
 
-#ifdef __cplusplus
-extern "C" {
+#include<stdio.h>
+#include<string.h>
+
+#ifdef NEED_LOG
+#define LOG_ENABLED 1
+#else
+#define LOG_ENABLED 0
 #endif
-
-
-
-
-#ifdef __cplusplus
-}
-#endif
-
-#endif /* UTILS_H */
-
