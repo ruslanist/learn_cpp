@@ -1,8 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
+#include<utils.h>
+
+#include<stdio.h>
+#include<string.h>
 
 /* 
  * File:   utils.c
@@ -11,14 +11,16 @@
  * Created on 22 марта 2018 г., 10:11
  */
 
-#include <stdio.h>
-#include <stdlib.h>
+int run_cmd(char * const argv[], int argc, char** output_ptr) {
+    
 
-/*
- * 
- */
-int main(int argc, char** argv) {
+    }
 
-    return (EXIT_SUCCESS);
-}
+int read_stream(FILE * f, char ** output) {
+    
+    }
 
+int parse_cmd(char *input_str, char ***out_argv, size_t * out_argc) {
+
+
+    }

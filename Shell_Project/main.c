@@ -6,14 +6,18 @@ int main(int argc, char * argv[]) {
     fprintf(stdout, "LOG_ENABLED\n");  
 #endif
 
-
-
-
-
-
-
-
-
+    while(1) {
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    }
 
 
 
