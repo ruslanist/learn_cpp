@@ -19,6 +19,8 @@
 #define LOG_ENABLED 0
 #endif
 
+#define LOG(fmt, ...) do {if(LOG_ENABLED) fprintf(stderr, "%s[%d]: " fmt "\n", __FILE__, __LINE__, ##__VA_ARGS__);} while(0)
+
 
 
 
