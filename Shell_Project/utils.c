@@ -42,24 +42,44 @@ int read_stream(FILE * f, char ** output) {
             LOG("stdin fail");
             goto on_err;
         }
-
+        //We must break the client input, because the user presses Enter. This means the end of the team. We do not need to read more from the user.
        
- on_err:       
+        if(ch == '\n') {
+        read_buffer[read_pos] = '0'; //We end our buffer with user command with null terminator. Because each c-string must ends with null terminator
+        //After this, we will be able to safe put read_buffer as argument to printf and other c-string functions.
+            break;        
+        }
         
+        read_buffer[read_pos] = ch;
+        
+        //if it a last iteration, and we need a more space, we realloc read_buffer
        
+        if((read_pos+ 1) == read_buffer_size) {
+            size_t new_size = read_buffer_size * 2;
+            char * tmp = realloc(read_buffer, new_size);
+           
+            if(tmp == NULL) {
+                LOG("realloc fail");
+                goto on_err;          
+            }
         
+            read_buffer = tmp;
+            read_buffer_size = new_size;    
+        }
    }
     
-    
+   retval = 0; 
+   goto on_exit;
    
+ on_err:
+    free(read_buffer);
+    read_buffer = NULL
     
+ on_exit:
+    *output  = read_buffer;
     
-    
-    
-    
-    
-    
-    
+    return retval;
+        
  }
 
 

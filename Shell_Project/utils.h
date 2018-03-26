@@ -11,7 +11,10 @@
 #define UTILS_H
 
 #include<stdio.h>
+#include<stdlib.h>
 #include<string.h>
+#include<sys/types.h>
+#include<sys/wait.h>
 
 #ifdef NEED_LOG
 #define LOG_ENABLED 1
