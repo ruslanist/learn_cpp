@@ -1,4 +1,5 @@
-
+#ifndef UTILS_H
+#define UTILS_H
 
 /* 
  * File:   utils.h
@@ -6,9 +7,6 @@
  *
  * Created on 22 марта 2018 г., 9:43
  */
-
-#ifndef UTILS_H
-#define UTILS_H
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -22,11 +20,11 @@
 #define LOG_ENABLED 0
 #endif
 
+#define WRITE_END 1
+#define READ_END 0
+#define CHILD_ID 0
+
 #define LOG(fmt, ...) do {if(LOG_ENABLED) fprintf(stderr, "%s[%d]: " fmt "\n", __FILE__, __LINE__, ##__VA_ARGS__);} while(0)
-
-
-
-
 
 
 int run_cmd(char * const argv[], int argc, char** output_ptr);
