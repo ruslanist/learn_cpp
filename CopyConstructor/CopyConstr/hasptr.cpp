@@ -2,7 +2,7 @@
 #include <string>
 #include <iostream>
 
-HasPtr::HasPtr(const string &s = string()) : ps(new string(s), i(0))
+HasPtr::HasPtr(const string &s = string()) : ps(new string(s), i(0)
 
 {
     cout << s << endl;
@@ -13,5 +13,5 @@ HasPtr::HasPtr(const HasPtr &) {
 
     obj1.i = obj2.i;
 
-    obj1.ps = obj2.*(ps);
+    obj1.ps = *obj2.ps;
 }

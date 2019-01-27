@@ -2,6 +2,7 @@
 #define HASPTR_H
 #include <string>
 
+using std::string;
 
 class HasPtr
 {
@@ -11,7 +12,7 @@ public:
 
     HasPtr(const HasPtr&);
 
-//private:
+private:
     string *ps;
     int i;
 
