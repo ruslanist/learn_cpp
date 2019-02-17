@@ -57,16 +57,16 @@ int main()
 
 
     cout << lst.GetSize() << endl;
-/*
-   List *current;
+
+   List<int> *current = lst.head;
 
         while (current != nulptr) {
 
             cout << current->data << endl;
 
-            current->pNext;
+            current = current->pNext;
         }
-*/
+
 
 
     cout << "Hello World!" << endl;
