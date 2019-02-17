@@ -60,7 +60,7 @@ int main()
 
    List<int> *current = lst.head;
 
-        while (current != nulptr) {
+        while (current != nullptr) {
 
             cout << current->data << endl;
 
