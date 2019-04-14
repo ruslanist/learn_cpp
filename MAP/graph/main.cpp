@@ -2,6 +2,7 @@
 #include <vector>
 #include <map>
 #include <string>
+#include <iterator>
 
 using std::cout;
 using std::endl;
@@ -10,6 +11,8 @@ using std::string;
 using std::map;
 using std::pair;
 using std::make_pair;
+
+
 
 int main()
 {
@@ -66,6 +69,28 @@ int main()
 
             cout << "IP Adress:" << " " << id2 << endl;
             cout << endl;
+        }
+    }
+
+    vector<pair<int, int>> vec;
+    vec.push_back(make_pair(1, 2));
+    vec.push_back(make_pair(3, 4));
+    vec.push_back(make_pair(5, 6));
+    vec.push_back(make_pair(7, 8));
+    vec.push_back(make_pair(9, 10));
+
+    map<int, vector<int>> sumMap;
+    for (auto itr : vec) {
+        sumMap[itr.first].push_back(itr.second);
+    }
+
+
+    for (auto itr2 : sumMap) {
+
+        cout << itr2.first << " ";
+        for (auto itr3 : itr2.second) {
+
+            cout << itr3 <<  endl;
         }
     }
 
