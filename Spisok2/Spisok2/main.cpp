@@ -32,7 +32,7 @@ int main()
 
 
     Node *head = new Node();
-    Node *str_n = new Node();
+    Node *str_n = nullptr;
 
     str_n = insert(head, 100);
 
