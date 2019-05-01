@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include <vector>
 
 using namespace std;
@@ -7,19 +7,21 @@ class Node {
 
 public:
 
-    Node(int payL= 0, Node *p= nullptr) : payLoad(payL), pNext(p) {}
+    Node(int payL= 100, Node *pNext1=nullptr) : payLoad(payL), pNext(pNext1) {}
 
     Node *pNext;
-    int payLoad;
-
+    int payLoad;  
 };
 
+vector<Node*> Vec;
 
 Node * insert(Node* n, int val) {
 
     n->pNext = new Node(val);
 
-    return n;
+    Vec.push_back(n->pNext);
+
+    return n->pNext;
 
 }
 
@@ -28,19 +30,34 @@ Node * insert(Node* n, int val) {
 int main()
 {
 
-    vector<Node*> Vec;
-    Node *p = new Node();
+
+    Node *head = new Node();
+    Node *str_n = new Node();
+
+    str_n = insert(head, 100);
+
+    str_n = insert(str_n, 200);
+
+    str_n = insert(str_n, 300);
+
+    str_n = insert(str_n, 400);
+
+    str_n = insert(str_n, 500);
 
 
-    Vec.push_back(insert(p, 100));
-    Vec.push_back(insert(p, 200));
-    Vec.push_back(insert(p, 300));
-    Vec.push_back(insert(p, 400));
-    Vec.push_back(insert(p, 500));
-    cout << p->payLoad << endl;
-    cout << Vec.size() << endl;
+    for (auto it : Vec) {
 
+        cout << it->payLoad << endl;
+    }
+    cout << head->pNext << endl;
 
+    Node* cur = head;
+   while (cur->pNext != nullptr) {
+
+        cout << cur->payLoad << endl;
+
+        cur = cur->pNext;
+    }
 
     cout << "Hello World!" << endl;
     return 0;
